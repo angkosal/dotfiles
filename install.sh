@@ -14,9 +14,7 @@ cd "$HERE"
 
 projects=(
   tmux
-  vim
-  xmonad
-  zsh
+  nvim
 )
 
 echo "Symlinking files..."
