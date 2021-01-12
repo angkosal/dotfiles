@@ -51,6 +51,8 @@ if !exists('g:vscode')
   cmap w!! w !sudo tee %
 
   set scrolloff=3
+
+  autocmd FileType php setlocal ts=4 sts=4 sw=4
 endif
 
 

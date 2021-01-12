@@ -24,7 +24,8 @@ else
   " source $HOME/.config/nvim/themes/onedark.vim
   "source $HOME/.config/nvim/themes/nvcode.vim
   " source $HOME/.config/nvim/themes/papercolor.vim
-  source $HOME/.config/nvim/themes/gruvbox.vim
+  "source $HOME/.config/nvim/themes/gruvbox.vim
+  source $HOME/.config/nvim/themes/codedark.vim
   " source $HOME/.config/nvim/themes/oceanic-next.vim
   " source $HOME/.config/nvim/themes/seoul256.vim
   " source $HOME/.config/nvim/themes/solarized.vim

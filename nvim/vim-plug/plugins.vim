@@ -55,6 +55,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'christianchiarulli/nvcode.vim'
     "Plug 'NLKNguyen/papercolor-theme'
     Plug 'gruvbox-community/gruvbox'
+    Plug 'tomasiser/vim-code-dark'
     "Plug 'mhartington/oceanic-next'
     "Plug 'altercation/vim-colors-solarized'
     "Plug 'chriskempson/base16-vim'
@@ -112,6 +113,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/gist-vim'
     Plug 'moll/vim-bbye'
     Plug 'aquach/vim-http-client'
+
+    Plug 'stephpy/vim-php-cs-fixer'
+    Plug 'vimwiki/vimwiki'
   endif
 
 
