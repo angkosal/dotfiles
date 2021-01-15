@@ -114,8 +114,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'moll/vim-bbye'
     Plug 'aquach/vim-http-client'
 
-    Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'vimwiki/vimwiki'
+    "Plug 'stephpy/vim-php-cs-fixer'
+    "Plug 'vimwiki/vimwiki'
   endif
 
 
