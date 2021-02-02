@@ -114,6 +114,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'moll/vim-bbye'
     Plug 'aquach/vim-http-client'
 
+    Plug 'heavenshell/vim-jsdoc', {
+      \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
+      \ 'do': 'make install'
+    \}
+
     "Plug 'stephpy/vim-php-cs-fixer'
     "Plug 'vimwiki/vimwiki'
   endif
