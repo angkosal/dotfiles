@@ -255,4 +255,8 @@ function qrcode {
 }
 alias qrcode='qrcode'
 
+# +---------+
+# | Laravel |
+# +---------+
 
+alias art="php artisan"
