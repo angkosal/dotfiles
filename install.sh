@@ -16,6 +16,8 @@ projects=(
   tmux
   nvim
   zsh
+  polybar
+  i3
 )
 
 echo "Symlinking files..."
