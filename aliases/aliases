@@ -168,7 +168,7 @@ alias glol='git log --graph --oneline --decorate'
 alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" # Delete local branch merged with master
 alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"                                                              # git log for each branches
 alias gsub="git submodule update --remote"                                                        # pull submodules
-alias gexport='git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT $1 | tar -czf file.tgz -T -'
+alias gexport="git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT $1 | tar -czf $2.tgz -T -"
 
 # +------+
 # | tmux |
