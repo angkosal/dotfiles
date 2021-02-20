@@ -121,8 +121,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
       \ 'do': 'make install'
     \}
 
+    Plug 'vim-test/vim-test'
+
     "Plug 'stephpy/vim-php-cs-fixer'
-    "Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki'
+    Plug 'tbabej/taskwiki'
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
   endif
 
 
