@@ -55,4 +55,3 @@ if !exists('g:vscode')
   autocmd FileType php setlocal ts=4 sts=4 sw=4
 endif
 
-

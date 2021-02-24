@@ -14,9 +14,9 @@ nnoremap <Space> <Nop>
 
 if exists('g:vscode')
 
-      " Simulate same TAB behavior in VSCode
-      nmap <Tab> :Tabnext<CR>
-      nmap <S-Tab> :Tabprev<CR>
+    " Simulate same TAB behavior in VSCode
+    nmap <Tab> :Tabnext<CR>
+    nmap <S-Tab> :Tabprev<CR>
 
 else
   " Better nav for omnicomplete
@@ -77,6 +77,8 @@ else
   nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
   nnoremap <silent> <C-p>    :Files<CR>
+  nnoremap <silent> <Leader>n    :tabnew<CR>
+  nnoremap <silent> <Leader>N    :tabnew<CR>:Files<CR>
   vmap ? y/<C-r>"<CR>
   vmap / y/<C-r>"
   nmap ,v    :vsplit<CR>
@@ -84,6 +86,20 @@ else
   nmap ,<space>    :nohlsearch<CR>
   tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
   vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+  """ Window and tab management
+  " Windows
+  nmap th <C-W>h
+  nmap tl <C-W>l
+  nmap tj <C-W>j
+  nmap tk <C-W>k
+  nmap ts :split<SPACE>
+  nmap tv :vsplit<SPACE>
+  set splitbelow splitright
+  " tabs
+  nmap <silent> tn :tabnew<CR>:Files<CR>
+  nmap <silent> tN :tabnew<CR>
+  nmap <silent> tc :tabclose<CR>
 
   " PHP documenter script bound to Control-P
   " autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i

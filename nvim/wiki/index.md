@@ -10,3 +10,4 @@ _italic_ -- italic text
 ## Home tasks | project:tm
 * [X] Change idea  #725edf8b
 * [ ] Design layout  #d9604ff1
+* Should hide group selector and delete if group not exists
