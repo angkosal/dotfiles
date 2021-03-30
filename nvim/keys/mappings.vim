@@ -33,9 +33,13 @@ else
   " nnoremap <c-u> viwU<Esc>
 
   " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext<CR>
+  " nnoremap <silent> <TAB> :bnext<CR>
   " SHIFT-TAB will go back
-  nnoremap <silent> <S-TAB> :bprevious<CR>
+  " nnoremap <silent> <S-TAB> :bprevious<CR>
+
+  " Use tab for %
+  nmap <silent> <TAB> %
+  vmap <silent> <TAB> %
 
   " Move selected line / block of text in visual mode
   " shift + k to move up
