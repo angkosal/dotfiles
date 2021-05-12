@@ -38,14 +38,16 @@ if !exists('g:vscode')
   set incsearch
   set guifont=Fira\ Code\ Nerd\ Font
   set ignorecase
+  set modifiable
   " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   " set mmp=1300
   " set autochdir                           " Your working directory will always be the same as your working directory
   " set foldcolumn=2                        " Folding abilities
 
+  set makeprg=make\ -j4\ -w
+
   " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 
   " You can't stop me
   cmap w!! w !sudo tee %

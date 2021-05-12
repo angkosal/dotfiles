@@ -1,3 +1,4 @@
+
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -57,8 +58,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'gruvbox-community/gruvbox'
     "Plug 'tomasiser/vim-code-dark'
     "Plug 'mhartington/oceanic-next'
-    Plug 'sonph/onehalf', { 'rtp': 'vim' }
-    Plug 'altercation/vim-colors-solarized'
+    " Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    "Plug 'altercation/vim-colors-solarized'
+    Plug 'lifepillar/vim-solarized8'
 
     "Plug 'chriskempson/base16-vim'
     "Plug 'ayu-theme/ayu-vim'
@@ -88,17 +90,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Terminal
     Plug 'voldikss/vim-floaterm'
     " Start Screen
-    Plug 'mhinz/vim-startify'
+    " Plug 'mhinz/vim-startify'
     " Vista
     Plug 'liuchengxu/vista.vim'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
     " Zen mode
-    Plug 'junegunn/goyo.vim'
+    " Plug 'junegunn/goyo.vim'
     " Making stuff
-    Plug 'neomake/neomake'
+    " Plug 'neomake/neomake'
     " Snippets
-    Plug 'honza/vim-snippets'
+    " Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
     " Better Comments
     " Plug 'jbgutierrez/vim-better-comments'
@@ -116,18 +118,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'moll/vim-bbye'
     Plug 'aquach/vim-http-client'
 
-    Plug 'heavenshell/vim-jsdoc', {
-      \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
-      \ 'do': 'make install'
-    \}
-
     Plug 'vim-test/vim-test'
 
     "Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'vimwiki/vimwiki'
-    Plug 'tbabej/taskwiki'
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
+    "Plug 'vimwiki/vimwiki'
+    "Plug 'tbabej/taskwiki'
+    "Plug 'godlygeek/tabular'
+    "Plug 'plasticboy/vim-markdown'
+
+
   endif
 
 

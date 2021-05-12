@@ -28,8 +28,8 @@ else
   "source $HOME/.config/nvim/themes/codedark.vim
   " source $HOME/.config/nvim/themes/oceanic-next.vim
   " source $HOME/.config/nvim/themes/seoul256.vim
-  "source $HOME/.config/nvim/themes/solarized.vim
-  source $HOME/.config/nvim/themes/onehalf.vim
+  source $HOME/.config/nvim/themes/solarized.vim
+  "source $HOME/.config/nvim/themes/onehalf.vim
   " source $HOME/.config/nvim/themes/ayu.vim
   " source $HOME/.config/nvim/themes/palenight.vim
   source $HOME/.config/nvim/themes/airline.vim
@@ -50,7 +50,7 @@ else
   source $HOME/.config/nvim/plug-config/closetags.vim
   source $HOME/.config/nvim/plug-config/floaterm.vim
   source $HOME/.config/nvim/plug-config/vista.vim
-  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+  " luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   " source $HOME/.config/nvim/plug-config/easymotion.vim
 endif
 
@@ -59,7 +59,7 @@ endif
 if !empty(glob("~/.config/nvim/paths.vim"))
   source $HOME/.config/nvim/paths.vim
 endif
-let g:polyglot_disabled = ['csv']
+"let g:polyglot_disabled = ['csv']
 
 " Python
 " https://realpython.com/python-debugging-pdb/ " breakpoint syntax is really cool

@@ -105,6 +105,18 @@ else
   nmap <silent> tN :tabnew<CR>
   nmap <silent> tc :tabclose<CR>
 
+  map <F5> <ESC>:make<CR>
+
+  let s:i = 1
+  while s:i <= 10
+    execute printf(
+      \ 'nnoremap <Leader>%d :%dtabnext<CR>',
+      \ s:i == 10 ? 0 : s:i,
+      \ s:i,
+    \ )
+    let s:i += 1
+  endwhile
+
   " PHP documenter script bound to Control-P
   " autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
   " autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>

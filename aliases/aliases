@@ -140,7 +140,7 @@ alias port="netstat -tulpn | grep"
 # +--------+
 
 alias vim='nvim'
-alias vi='nvim'
+alias vi='~/tmp/nvim/bin/nvim'
 alias svim='sudoedit'
 alias dvim="vim -u /usr/share/nvim/archlinux.vim" # nvim with default config
 alias nvimc='rm -I $VIMCONFIG/swap/*'             # clean nvim swap file
@@ -243,17 +243,18 @@ alias dot="$HOME/dotfiles"
 # My server
 alias live='ssh root@45.76.158.60'
 alias tserver='ssh -i ~/code/keys/NewCashSystem.pem ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com'
+alias utserver='ssh -i ~/code/keys/movies.pem admin@18.136.131.54'
 alias trsup='scp -i ~/code/keys/NewCashSystem.pem -r /mnt/d/Work/new-cash-system/client/build/* ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com:/srv/live_cash_pro/'
 
 # +--------+
 # | Qrcode |
 # +--------+
 
-function qrcode {
+qrcodeFunction() {
   $HOME/.config/qrcode/qc.py $1
   /usr/bin/xdg-open "$HOME/qrcode.png"
 }
-alias qrcode='qrcode'
+alias qrcode='qrcodeFunction'
 
 # +---------+
 # | Laravel |
