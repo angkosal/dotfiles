@@ -140,7 +140,7 @@ alias port="netstat -tulpn | grep"
 # +--------+
 
 alias vim='nvim'
-alias vi='~/tmp/nvim/bin/nvim'
+alias vi='nvim'
 alias svim='sudoedit'
 alias dvim="vim -u /usr/share/nvim/archlinux.vim" # nvim with default config
 alias nvimc='rm -I $VIMCONFIG/swap/*'             # clean nvim swap file
