@@ -179,6 +179,7 @@ alias tmuxa='tmux attach -t'
 alias tmuxl='tmux list-sessions'
 alias tmuxc="vi ~/.tmux.conf"
 alias tmuxs="tmux source ~/.tmux.conf"
+alias tmuxr="tmux-session restore && tmuxa 0"
 
 # +-------+
 # | tmuxp |
