@@ -86,17 +86,21 @@
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
-    }, 
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-      "initializationOptions": {
-          "cache": {
-            "directory": "/tmp/ccls"
-          }
-        }
     }
+    //"ccls": {
+    //  "command": "ccls",
+    //  "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    //  "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+    //  "initializationOptions": {
+    //    "cache": {
+    //      "directory": "/tmp/ccls"
+    //    }
+    //  }
+    //}
+  },
+  "php-cs-fixer": {
+    //"rules": "@PSR12,ordered_imports,no_unused_imports"
+    "rules": "@PSR12,ordered_imports"
   }
 
   // TODO b:coc_suggest_disable=1 GOYO

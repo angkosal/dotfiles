@@ -55,7 +55,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'christianchiarulli/onedark.vim'
     "Plug 'christianchiarulli/nvcode.vim'
     "Plug 'NLKNguyen/papercolor-theme'
-    "Plug 'gruvbox-community/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     "Plug 'tomasiser/vim-code-dark'
     "Plug 'mhartington/oceanic-next'
     " Plug 'sonph/onehalf', { 'rtp': 'vim' }

@@ -1,0 +1,22 @@
+-- local ok, wk = pcall(require, "which-key")
+-- 
+-- if not ok then
+--    return
+-- end
+-- 
+-- local registers = {
+--   f = {
+--     name = 'Files',
+--   }
+-- }
+-- 
+-- local M = {}
+-- 
+-- M.setup = function(on_attach)
+--    wk.registers(registers)
+--    wk.setup()
+-- end
+-- 
+-- return M
+
+
