@@ -4,7 +4,7 @@
 # sudo npm install -g typescript-language-server
 
 ### Check if a directory does not exist ###
-if [ ! -d "/path/to/dir" ] 
+if [ ! -d "$OUT/.config/nvim" ] 
 then
   echo "clonning NvChad..."
   git clone "https://github.com/NvChad/NvChad.git" "$OUT/.config/nvim"
