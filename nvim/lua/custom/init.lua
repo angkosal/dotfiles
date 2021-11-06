@@ -24,12 +24,16 @@ local hooks = require "core.hooks"
 -- you can set one or many mappings
 -- example below:
 
+-- set difference tab default 2
+vim.api.nvim_command('autocmd BufEnter *.php setlocal shiftwidth=4')
+vim.api.nvim_command('autocmd BufEnter *.py setlocal shiftwidth=4')
+
 hooks.add("setup_mappings", function(map)
 --    map("n", "<leader>cc", "gg0vG$d", opt) -- example to delete the buffer
 --    .... many more mappings ....
   map("n", "tn", ":tabnew<CR>:Telescope find_files<CR>", opt) -- open new tab and find files
-  map("n", "<Tab>", "%", opt)
-  map("v", "<Tab>", "%", opt)
+  map("n", "<Tab>", "%", {map = ture})
+  map("v", "<Tab>", "%", {map = ture})
   map("i", "<C-H>", "<C-W>", {noremap = true})
 
   map("n", "<M-j>", ":resize -2<CR>", opt)
@@ -47,11 +51,16 @@ end)
 -- see: https://github.com/wbthomason/packer.nvim
 -- examples below:
 
+
 hooks.add("install_plugins", function(use)
 --    use {
 --       "max397574/better-escape.nvim",
 --       event = "InsertEnter",
 --    }
+  use {
+    "github/copilot.vim",
+  }
+
   use {
     "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
