@@ -53,13 +53,14 @@ end)
 
 
 hooks.add("install_plugins", function(use)
---    use {
---       "max397574/better-escape.nvim",
---       event = "InsertEnter",
---    }
-  use {
-    "github/copilot.vim",
-  }
+  --    use {
+  --       "max397574/better-escape.nvim",
+  --       event = "InsertEnter",
+  --    }
+
+  -- use {
+  --   "github/copilot.vim",
+  -- }
 
   use {
     "jose-elias-alvarez/null-ls.nvim",
