@@ -9,9 +9,10 @@ local b = null_ls.builtins
 local sources = {
 
    -- JS html css stuff
-   b.formatting.prettierd.with {
-      filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptreact" },
-   },
+   -- b.formatting.prettierd.with {
+   --    filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptreact" },
+   -- },
+   b.formatting.prettierd,
    b.diagnostics.eslint.with {
       command = "eslint_d",
    },
@@ -29,6 +30,7 @@ local sources = {
     b.formatting.phpcsfixer,
     -- b.diagnostics.phpstan,
     -- b.diagnostics.psalm
+    b.formatting.autopep8,
 }
 
 local M = {}

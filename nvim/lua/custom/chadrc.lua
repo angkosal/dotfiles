@@ -18,7 +18,8 @@ M.options = {
 }
 
 M.ui = {
-  theme = "gruvchad",
+  -- theme = "gruvchad",
+  theme = "everforest",
   transparency = true,
 }
 
@@ -62,8 +63,13 @@ M.plugins = {
       --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
         setup_lspconf = "custom.plugin_confs.lspconfig",
       },
+      nvimtree = {
+         enable_git = 1,
+      },
    },
    status = {
+      colorizer = true,
+      truezen = true,
       bufferline = false
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,

@@ -32,8 +32,8 @@ hooks.add("setup_mappings", function(map)
 --    map("n", "<leader>cc", "gg0vG$d", opt) -- example to delete the buffer
 --    .... many more mappings ....
   map("n", "tn", ":tabnew<CR>:Telescope find_files<CR>", opt) -- open new tab and find files
-  map("n", "<Tab>", "%", {map = ture})
-  map("v", "<Tab>", "%", {map = ture})
+  map("n", "<Tab>", "%", opt)
+  map("v", "<Tab>", "%", opt)
   map("i", "<C-H>", "<C-W>", {noremap = true})
 
   map("n", "<M-j>", ":resize -2<CR>", opt)
@@ -44,6 +44,8 @@ hooks.add("setup_mappings", function(map)
   for i = 1, 9 do
     map("n", "<leader>"..i, ":"..i.."tabnext<CR>", opt) -- example to delete the buffer
   end
+
+  map('n', '<Leader>r', [[<cmd>lua require'rest-nvim'.run()<cr>]], {noremap = true, silent = true})
 end)
 
 -- To add new plugins, use the "install_plugin" hook,
@@ -85,6 +87,26 @@ hooks.add("install_plugins", function(use)
       require("custom.plugin_confs.neogit").setup()
     end 
   } 
+
+  use {
+    "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("rest-nvim").setup({
+        -- Open request results in a horizontal split
+        result_split_horizontal = false,
+        -- Skip SSL verification, useful for unknown certificates
+        skip_ssl_verification = false,
+        -- Highlight request on run
+        highlight = {
+          enabled = true,
+          timeout = 150,
+        },
+        -- Jump to request line on run
+        jump_to_request = false,
+      })
+    end
+  }
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
