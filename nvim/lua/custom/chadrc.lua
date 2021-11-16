@@ -18,8 +18,7 @@ M.options = {
 }
 
 M.ui = {
-  -- theme = "gruvchad",
-  theme = "everforest",
+  theme = "onedark",
   transparency = true,
 }
 
