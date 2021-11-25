@@ -89,9 +89,17 @@ hooks.add("install_plugins", function(use)
   } 
 
   use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+
+  use {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
+      -- <Plug>RestNvim, run the request under the cursor
+      -- <Plug>RestNvimPreview, preview the request cURL command
+      -- <Plug>RestNvimLast, re-run the last request
       require("rest-nvim").setup({
         -- Open request results in a horizontal split
         result_split_horizontal = false,
