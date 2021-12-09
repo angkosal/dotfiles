@@ -40,6 +40,7 @@ hooks.add("setup_mappings", function(map)
   map("n", "<M-k>", ":resize +2<CR>", opt)
   map("n", "<M-h>", ":vertical resize -2<CR>", opt)
   map("n", "<M-l>", ":vertical resize +2<CR>", opt)
+  map("n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
  
   for i = 1, 9 do
     map("n", "<leader>"..i, ":"..i.."tabnext<CR>", opt) -- example to delete the buffer

@@ -5,7 +5,9 @@ M.setup_lsp = function(attach, capabilities)
 
    -- lspservers with default config
 
-   local servers = { "html", "cssls", "pyright", "phpactor" }
+   local servers = { "html", "cssls", "pyright"
+   -- , "phpactor"
+   }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
