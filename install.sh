@@ -13,10 +13,12 @@ OUT="$1"
 cd "$HERE"
 
 projects=(
+  i3
+  rofi
   alacritty
   tmux
   nvim
-  zsh
+  #zsh
 )
 
 echo "Symlinking files..."
