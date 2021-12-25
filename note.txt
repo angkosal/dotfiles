@@ -1,0 +1,2 @@
+remap caps lock to escape $HOME/.profile
+setxkbmap -option caps:swapescape
