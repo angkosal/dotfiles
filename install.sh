@@ -14,6 +14,7 @@ cd "$HERE"
 
 projects=(
   i3
+  i3status
   rofi
   alacritty
   tmux
