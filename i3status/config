@@ -79,7 +79,7 @@ tztime phnompenh {
   # format = "<span color='#ffffff'>%time</span>"
   format = "%Y-%m-%d %H:%M:%S"
   # format_time = "  %H:%M:%S | %a. %d.%m.%Y "
-  timezone = "Etc/UTC"
+  timezone = "Asia/Phnom_Penh"
 }
 
 
