@@ -2,7 +2,6 @@
 -- This file is for NvChad options & tools, custom settings are split between here and 'lua/custom/init.lua'
 
 local M = {}
-M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 
 -- NOTE: To use this, make a copy with `cp example_chadrc.lua chadrc.lua`
 

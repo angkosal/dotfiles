@@ -13,9 +13,9 @@ local sources = {
    --    filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptreact" },
    -- },
    b.formatting.prettierd,
-   b.diagnostics.eslint.with {
-      command = "eslint_d",
-   },
+   -- b.diagnostics.eslint.with {
+   --    command = "eslint_d",
+   -- },
 
    -- Lua
    b.formatting.stylua,

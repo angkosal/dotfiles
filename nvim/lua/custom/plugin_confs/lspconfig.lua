@@ -26,7 +26,7 @@ M.setup_lsp = function(attach, capabilities)
          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
       end,
    }
-
+  lspconfig.eslint.setup{}
 -- the above tsserver config will remvoe the tsserver's inbuilt formatting 
 -- since I use null-ls with denofmt for formatting ts/js stuff.
 end
