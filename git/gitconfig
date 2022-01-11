@@ -1,0 +1,41 @@
+[user]
+	email = angkosal@gmail.com
+	name = Ang Kosal
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore
+[push]
+	default = nothing
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+[alias]
+	co = checkout
+	l = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit
+	ql = log --color --pretty=format:'%Cgreen%h%Creset%C(yellow)%d%Creset %s%Creset' --abbrev-commit -n5
+
+[color]
+	ui = auto
+[color "branch"]
+	current = "#cb4b16"  # bright red
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = "#657b83"  # bright yellow
+	frag = "#6c6ec6"  # bright magenta
+	old = red
+	new = green
+[color "interactive"]
+	help = "#cb4b16"  # bright red
+	prompt = "#849598"  # bright blue
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+	noprefix = 1
+[merge]
+	conflictstyle = diff3
+[init]
+	defaultBranch = master
