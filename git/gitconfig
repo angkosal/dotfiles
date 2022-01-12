@@ -4,8 +4,6 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
-[push]
-	default = nothing
 [branch]
 	autosetupmerge = true
 	autosetuprebase = always
