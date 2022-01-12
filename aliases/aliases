@@ -188,6 +188,12 @@ alias tmuxr="tmux-session restore && tmuxa 0"
 
 alias mux='tmuxp load'
 
+# +---------+
+# | lazygit |
+# +---------+
+
+alias lg='lazygit'
+
 # +--------+
 # | docker |
 # +--------+
