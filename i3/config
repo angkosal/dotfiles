@@ -182,10 +182,6 @@ bindsym $super+Ctrl+h workspace prev
 
 
 # switch to workspace
-bindsym $alt+Control+Right workspace next
-bindsym $alt+Control+Left workspace prev
-bindsym $alt+Control+l workspace next
-bindsym $alt+Control+h workspace prev
 bindsym $super+1 workspace 1
 bindsym $super+2 workspace 2
 bindsym $super+3 workspace 3
@@ -206,14 +202,20 @@ bindsym $super+Shift+7 move container to workspace 7
 bindsym $super+Shift+8 move container to workspace 8
 
 # Move to workspace with focused container
-bindsym $alt+Shift+1 move container to workspace 1; workspace 1
-bindsym $alt+Shift+2 move container to workspace 2; workspace 2
-bindsym $alt+Shift+3 move container to workspace 3; workspace 3
-bindsym $alt+Shift+4 move container to workspace 4; workspace 4
-bindsym $alt+Shift+5 move container to workspace 5; workspace 5
-bindsym $alt+Shift+6 move container to workspace 6; workspace 6
-bindsym $alt+Shift+7 move container to workspace 7; workspace 7
-bindsym $alt+Shift+8 move container to workspace 8; workspace 8
+bindsym $super+Ctrl+1 move container to workspace 1; workspace 1
+bindsym $super+Ctrl+2 move container to workspace 2; workspace 2
+bindsym $super+Ctrl+3 move container to workspace 3; workspace 3
+bindsym $super+Ctrl+4 move container to workspace 4; workspace 4
+bindsym $super+Ctrl+5 move container to workspace 5; workspace 5
+bindsym $super+Ctrl+6 move container to workspace 6; workspace 6
+bindsym $super+Ctrl+7 move container to workspace 7; workspace 7
+bindsym $super+Ctrl+8 move container to workspace 8; workspace 8
+
+bindsym $alt+Ctrl+h focus output left
+bindsym $alt+Ctrl+l focus output right
+
+bindsym $alt+Ctrl+Shift+h move output left
+bindsym $alt+Ctrl+Shift+l move output right
 
 # reload the configuration file
 bindsym $super+Shift+c reload
