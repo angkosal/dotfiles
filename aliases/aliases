@@ -253,6 +253,7 @@ alias live='ssh root@45.76.158.60'
 alias tserver='ssh -i ~/code/keys/NewCashSystem.pem ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com'
 alias utserver='ssh -i ~/code/keys/movies.pem admin@18.136.131.54'
 alias trsup='scp -i ~/code/keys/NewCashSystem.pem -r /mnt/d/Work/new-cash-system/client/build/* ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com:/srv/live_cash_pro/'
+alias creditsys='ssh -i ~/code/keys/credit-sys.pem admin@16.162.76.148'
 
 # +--------+
 # | Qrcode |
