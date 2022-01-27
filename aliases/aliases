@@ -260,8 +260,8 @@ alias creditsys='ssh -i ~/code/keys/credit-sys.pem admin@16.162.76.148'
 # +--------+
 
 qrcodeFunction() {
-  $HOME/.config/qrcode/qc.py $1
-  /usr/bin/xdg-open "$HOME/qrcode.png"
+  $HOME/dotfiles/qrcode/qc.py $1
+  xdg-open "$HOME/qrcode.png"
 }
 alias qrcode='qrcodeFunction'
 
