@@ -2,5 +2,5 @@
 
 To install in `$HOME`:
 
-    Linux: `./install.sh $HOME`
-    WSL: `./install-wsl.sh $HOME`
+    Linux: ./install.sh $HOME
+    WSL: ./install-wsl.sh $HOME
