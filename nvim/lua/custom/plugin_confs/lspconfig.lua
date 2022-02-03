@@ -1,34 +1,42 @@
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
-   local lspconfig = require "lspconfig"
+   local lsp_installer = require "nvim-lsp-installer"
 
-   -- lspservers with default config
-
-   local servers = { "html", "cssls", "pyright"
-   -- , "phpactor"
+   lsp_installer.settings {
+      ui = {
+         icons = {
+            server_installed = "﫟" ,
+            server_pending = "",
+            server_uninstalled = "✗",
+         },
+      },
    }
 
-   for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup {
+   lsp_installer.on_server_ready(function(server)
+      local opts = {
          on_attach = attach,
          capabilities = capabilities,
          flags = {
             debounce_text_changes = 150,
          },
+         settings = {},
       }
-   end
-   
-   -- typescript
- lspconfig.tsserver.setup {
-      on_attach = function(client, bufnr)
-         client.resolved_capabilities.document_formatting = false
-         vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-      end,
-   }
-  lspconfig.eslint.setup{}
--- the above tsserver config will remvoe the tsserver's inbuilt formatting 
--- since I use null-ls with denofmt for formatting ts/js stuff.
+
+      -- basic example to edit lsp server's options, disabling tsserver's inbuilt formatter
+      if server.name == 'tsserver' then 
+        opts.on_attach = function(client, bufnr)
+           client.resolved_capabilities.document_formatting = false
+           vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+           vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {})
+           vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {})
+           vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
+        end
+      end
+      
+      server:setup(opts)
+      vim.cmd [[ do User LspAttachBuffers ]]
+   end)
 end
 
 return M

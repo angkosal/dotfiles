@@ -54,29 +54,32 @@ M.mappings.plugins = {
   }
 }
 
+-- Install plugins
+local userPlugins = require "custom.plugins" -- path to table
 -- NvChad included plugin options & overrides
 M.plugins = {
-   options = {
-      lspconfig = {
-      --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
-        setup_lspconf = "custom.plugin_confs.lspconfig",
-      },
-      nvimtree = {
-         enable_git = 1,
-      },
-   },
-   status = {
-      colorizer = true,
-      truezen = true,
-      bufferline = false
-   },
-   -- To change the Packer `config` of a plugin that comes with NvChad,
-   -- add a table entry below matching the plugin github name
-   --              '-' -> '_', remove any '.lua', '.nvim' extensions
-   -- this string will be called in a `require`
-   --              use "(custom.configs).my_func()" to call a function
-   --              use "custom.blankline" to call a file
-   default_plugin_config_replace = {},
+  install = userPlugins,
+  options = {
+    lspconfig = {
+    --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
+      setup_lspconf = "custom.plugin_confs.lspconfig",
+    },
+    nvimtree = {
+      enable_git = 1,
+    },
+  },
+  status = {
+    colorizer = true,
+    truezen = true,
+    bufferline = false
+  },
+  -- To change the Packer `config` of a plugin that comes with NvChad,
+  -- add a table entry below matching the plugin github name
+  --              '-' -> '_', remove any '.lua', '.nvim' extensions
+  -- this string will be called in a `require`
+  --              use "(custom.configs).my_func()" to call a function
+  --              use "custom.blankline" to call a file
+  default_plugin_config_replace = {},
 }
 
 return M
