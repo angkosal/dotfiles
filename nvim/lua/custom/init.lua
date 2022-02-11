@@ -4,6 +4,9 @@ local map = require("core.utils").map
 -- set difference tab default 2
 vim.api.nvim_command('autocmd BufEnter *.php setlocal shiftwidth=4')
 vim.api.nvim_command('autocmd BufEnter *.py setlocal shiftwidth=4')
+vim.api.nvim_command('autocmd BufEnter *.cpp setlocal shiftwidth=4')
+vim.api.nvim_command('autocmd BufEnter *.h setlocal shiftwidth=4')
+vim.api.nvim_command('autocmd BufEnter *.hpp setlocal shiftwidth=4')
 
 --    map("n", "<leader>cc", "gg0vG$d", opt) -- example to delete the buffer
 --    .... many more mappings ....
