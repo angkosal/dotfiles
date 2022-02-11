@@ -17,7 +17,8 @@ M.options = {
 }
 
 M.ui = {
-  theme = "everforest",
+  -- theme = "everforest",
+  theme = "tokyonight",
   transparency = true,
 }
 
