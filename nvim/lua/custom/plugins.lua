@@ -9,13 +9,13 @@ return {
       require("custom.plugin_confs.null-ls").setup()
     end,
   },
-  {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {
-      }
-    end
-  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     require("which-key").setup {
+  --     }
+  --   end
+  -- },
   {
     'TimUntersberger/neogit',
     cmd = 'Neogit',

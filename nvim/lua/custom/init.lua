@@ -1,6 +1,8 @@
 -- MAPPINGS
 local map = require("core.utils").map
 
+vim.opt.fileformats='dos'
+
 -- set difference tab default 2
 vim.api.nvim_command('autocmd BufEnter *.php setlocal shiftwidth=4')
 vim.api.nvim_command('autocmd BufEnter *.py setlocal shiftwidth=4')
