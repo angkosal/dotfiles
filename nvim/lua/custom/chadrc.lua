@@ -14,6 +14,7 @@ local M = {}
 M.options = {
   relativenumber = true,
   mouse = "nv",
+  tabstop = 4,
 }
 
 M.ui = {
