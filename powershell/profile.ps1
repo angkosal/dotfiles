@@ -6,5 +6,7 @@ oh-my-posh --init --shell pwsh --config ~/AppData/Local/Programs/oh-my-posh/them
 New-Alias lg lazygit
 New-Alias gs Git-Status
 New-Alias gd Git-Diff
+
+
 # New-Alias gl Git-Log
 # New-Alias gm Git-Commit

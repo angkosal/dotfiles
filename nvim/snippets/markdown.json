@@ -1,0 +1,37 @@
+{
+    "todo": {
+        "prefix": "todo",
+        "body": [
+            "<!--TODO: `echo $user` ${1:desc} `!v strftime('%c')`-->"
+        ],
+        "description": "To do reminder"
+    },
+    "row 1": {
+        "prefix": "r1",
+        "body": [
+            "| ${1:Text} |"
+        ],
+        "description": "Column for 1 row table"
+    },
+    "row 2": {
+        "prefix": "r2",
+        "body": [
+            "| ${1:Text} | ${2:Text} |"
+        ],
+        "description": "Column for 2 row table"
+    },
+    "row 3": {
+        "prefix": "r3",
+        "body": [
+            "| ${1:Text} | ${2:Text} | ${3:Text} |"
+        ],
+        "description": "Column for 3 row table"
+    },
+    "row 4": {
+        "prefix": "r4",
+        "body": [
+            "| ${1:Text} | ${2:Text} | ${3:Text} | ${4:Text} |"
+        ],
+        "description": "Column for 4 row table"
+    }
+}

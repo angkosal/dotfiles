@@ -1,0 +1,5 @@
+# directories and files to exclude
+nvim/after
+packer/
+pack/
+plugin/

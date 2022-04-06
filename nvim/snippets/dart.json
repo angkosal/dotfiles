@@ -1,0 +1,10 @@
+{
+  "todo": {
+    "prefix": "todo",
+    "body": [
+      "// @@@ TODO: ${1: Add your code here}",
+      "$0"
+    ],
+    "description": "todo list"
+  }
+}

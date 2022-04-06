@@ -1,0 +1,22 @@
+{
+  "name": "friendly-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./php.json"
+      },
+      {
+        "language": ["markdown", "rmd"],
+        "path": "./markdown.json"
+      },
+      {
+        "language": "dart",
+        "path": "./dart.json"
+      }
+    ]
+  }
+}

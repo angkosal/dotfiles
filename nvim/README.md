@@ -1,183 +1,277 @@
-## Install Neovim
+<p align="center">
+<img src="img/logo.png" alt="neovim-lua_logo">
+</p>
 
-To get the latest and greatest:
-
-```bash
-cd ~
-sudo rm -r neovim
-git clone https://github.com/neovim/neovim
-cd neovim
-sudo make CMAKE_BUILD_TYPE=Release install
-cd ~
-sudo rm -r neovim
-```
+<h3 align="center">
+Neovim KISS configuration with Lua
+</h3>
 
 
-## Clone this repo into your config
+[packer.nvim](https://github.com/wbthomason/packer.nvim) -  A use-package inspired plugin manager for Neovim
 
-```bash
-git clone https://github.com/ChristianChiarulli/nvim.git ~/.config/nvim
-```
+[nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) - A File Explorer written In Lua
 
-## Install python & node support
+[indentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines (including empty lines)
 
-```bash
-pip install pynvim
-```
+[nvim-autopairs](https://github.com/windwp/nvim-autopairs) - A super powerful autopairs for Neovim
 
-```bash
-npm i -g neovim
-```
+[feline.nvim](https://github.com/Famiu/feline.nvim) - A minimal, stylish and customizable statusline for Neovim written in Lua
 
-## Install Neovim remote
+[nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - A Lua fork of vim-devicons
 
-```bash
-pip install neovim-remote
-```
+[vista.vim](https://github.com/liuchengxu/vista.vim) - View and search LSP symbols, tags in Vim/NeoVim
 
-This will install `nvr` to `~/.local/bin` so you will need to add the following to your `bashrc` or `zshrc`
+[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer
 
-```
-export PATH=$HOME/.local/bin:$PATH
-```
+[nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Auto completion plugin
 
-## Install clipboard support
+[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of common configurations for Neovim's built-in language server client
 
-- On Mac pbcopy should be builtin
+[LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Engine for Neovim written in Lua
 
-- Ubuntu
+[gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Super fast git decorations implemented purely in lua/teal
 
-  ```bash
-  sudo apt install xsel
-  ```
+[alpha-nvim](https://github.com/goolord/alpha-nvim) - A fast and highly customizable greeter for neovim.
 
-- Arch
+## Directory Tree of Lua Files
 
-  ```bash
-  sudo pacman -S xsel
-  ```
-
-## (Optional) Install python & node support using virtual environments
-
-Make sure to add these paths somewhere in your config
+`${HOME}/.config/nvim`
 
 ```
-let g:python3_host_prog = expand("<path to python with pynvim installed>")
-let g:python3_host_prog = expand("~/.miniconda/envs/neovim/bin/python3.8") " <- example
-
-let g:node_host_prog = expand("<path to node with neovim installed>")
-let g:node_host_prog = expand("~/.nvm/versions/node/v12.16.1/bin/neovim-node-host") " <- example
+├── lua
+│   ├── core
+│   │   ├── colors.lua
+│   │   ├── keymaps.lua
+│   │   └── settings.lua
+│   ├── plugins
+│   │   ├── alpha-nvim.lua
+│   │   ├── feline.lua
+│   │   ├── indent-blankline.lua
+│   │   ├── nvim-cmp.lua
+│   │   ├── nvim-lspconfig.lua
+│   │   ├── nvim-tree.lua
+│   │   ├── nvim-treesitter.lua
+│   │   └── vista.lua
+│   └── packer_init.lua
+├── plugin
+│   └── packer_compiled.lua
+└── init.lua
 ```
 
-## List of programs you should install
+## Files and Settings
 
-- ranger
-- ueberzug
-- ripgrep
-- silver_searcher
-- fd
-- universal-ctags
-- lazy git
-- lazy docker
-- ninja (for lua lsp)
+`/nvim`
 
-Explanations and installation instruction can be found on my blog
+* [init.lua](nvim/init.lua): Main configuration file that call `lua` modules
 
-## Language Servers
+* [lua](nvim/lua): Folder of `lua` modules, here reside all the Lua modules that needed. These modules are called from `init.lua` file (see below).
 
-Some example language servers, if you just install them they will work with this config
+See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
-```bash
-npm i -g pyright
-npm i -g bash-language-server
-npm install -g vscode-css-languageserver-bin
-npm install -g dockerfile-language-server-nodejs
-npm install -g graphql-language-service-cli
-npm install -g vscode-html-languageserver-bin
-npm install -g typescript typescript-language-server
-npm install -g vscode-json-languageserver
-npm install -g vim-language-server
-npm install -g yaml-language-server
+`/nvim/lua`
+
+* [packer_init.lua](nvim/lua/packer_init.lua): Load plugins
+
+`/nvim/lua/core`
+
+* [settings.lua](nvim/lua/core/settings.lua): General Neovim settings and configuration
+
+* [keymaps.lua](nvim/lua/core/keymaps.lua): Keymaps configuration file, vim/neovim and plugins keymaps.
+
+* [colors.lua](nvim/lua/core/colors.lua): Define Neovim and plugins color scheme
+
+`/nvim/lua/plugins`
+
+* [packer.lua](nvim/lua/plugins/packer.lua): Plugin manager settings
+
+* [alpha-nvim.lua](nvim/lua/plugins/alpha-nvim.lua): Dashboard
+
+* [feline.lua](nvim/lua/plugins/feline.lua): Statusline configuration file
+
+* [indent-blankline.lua](nvim/lua/plugins/indent-blankline.lua): Indent line
+
+* [nvim-cmp.lua](nvim/lua/plugins/nvim-cmp.lua): Autocompletion settings
+
+* [nvim-lspconfig.lua](nvim/lua/plugins/nvim-lspconfig.lua): LSP configuration (language servers, keybinding)
+
+* [nvim-tree.lua](nvim/lua/plugins/nvim-tree.lua): File manager settings
+
+* [nvim-treesitter](nvim/lua/plugins/nvim-treesitter): Treesitter interface configuration
+
+* [vista.lua](nvim/lua/plugins/vista.lua): Tag viewer settings
+
+## Appearance
+
+**Colorschemes:**
+
+* [OneDark](https://github.com/navarasu/onedark.nvim)
+
+* [Neovim Monokai](https://github.com/tanvirtin/monokai.nvim)
+
+* [Rose Pine](https://github.com/rose-pine/neovim)
+
+**Fonts:** [Cozette](https://github.com/slavfox/Cozette)
+
+**Icons:** [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
+
+## Screenshots
+
+<p align="center">
+<img src="img/banner.png">
+</p>
+
+<details><summary> <b>(Click to expand)</b></summary>
+
+**OneDark (darker)**
+
+![onedark_1](img/1-onedark_1.png)
+
+![onedark_2](img/2-onedark_2.png)
+
+**Monokai**
+
+![monokai_1](img/3-monokai_1.png)
+
+![monokai_2](img/4-monokai_2.png)
+
+**Rosé Pine**
+
+![rose-pine_1](img/5-rose-pine_1.png)
+
+![rose-pine-2](img/6-rose-pine_2.png)
+
+</details>
+
+## Installation
+
+1. Install [neovim v0.6.x](https://github.com/neovim/neovim/releases/latest)
+
+2. Install [npm](https://github.com/npm/cli) (for download the packages of LSP language servers)
+
+3. Download [this repository](https://github.com/brainfucksec/neovim-lua) with `git` and copy the `nvim` folder in the `${HOME}/.config` directory (make a backup of your current `nvim` folder if necessary):
+
+```term
+git clone https://github.com/brainfucksec/neovim-lua.git
+cd neovim-lua/
+cp -Rv nvim ~/.config/
 ```
 
-Go [here](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
+4. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
 
-How to install the lua language server: [link](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone))
+```term
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
 
-## For FAR to work
+Open Neovim and run `:PackerSync` command.
+
+See: https://github.com/wbthomason/packer.nvim#quickstart
+
+## LSP Configuration
+
+1. Install LSP language servers with `npm`
+
+```term
+sudo npm install -g bash-language-server pyright vscode-langservers-extracted typescript typescript-language-server
+```
+
+2. Install [clang](https://clangd.llvm.org/installation.html) for use LSP with [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
+
+3. Open a source file of one of the supported languages with Neovim and run command [:LspInfo](https://github.com/neovim/nvim-lspconfig#built-in-commands) for testing the LSP support.
+
+### Languages Currently Supported
+
+Lua - [builtin](https://neovim.io/doc/user/lua.html)
+
+Bash - [bashls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls)
+
+Python - [pyright](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright)
+
+C, C++, CSS - [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
+
+HTML, CSS, JSON - [vscode-html](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html)
+
+JavaScript, TypeScript - [tsserver](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
+
+See: [nvim-lspconfig #doc/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+
+## Set Color Scheme
+
+The color scheme is defined in the following files (default: OneDark):
+
+* Neovim UI - [nvim/lua/core/settings.lua](nvim/lua/core/settings.lua):
+
+```lua
+-- Load colorscheme
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
+```
+
+* Statusline - [nvim/lua/plugins/feline.lua](nvim/lua/plugins/feline.lua):
+
+```lua
+-- Set colorscheme (from core/colors.lua/colorscheme_name)
+local colors = require('core/colors').onedark
+```
+
+## Configuration check
+
+- Open nvim and run command `checkhealth`, you should not see any error in the output (except for the one related to the Python 2 interpreter if don't have it):
 
 ```vim
-:UpdateRemotePlugins
+:checkhealth
 ```
 
-To replace in file make sure to specify `%:p`
-To replace across project specify `**/*.<your_extension>`
+![.](img/checkhealth.png)
 
-## Vim Gists
+- You can also use the `startuptime` option to read the nvim startup logs:
 
-To use **vim-gists** you will need to configure the following:
+```term
+nvim --startuptime > /tmp/nvim-start.log
 
-```bash
-git config --global github.user <username>
+nvim /tmp/nvim-start.log
 ```
 
-## VSCodium & Neo Vim Extension
-
-[VSCodium](https://github.com/VSCodium/vscodium) contains build files to generate free release binaries of Microsoft's VS Code.
-
-You can install it on multiple platforms:
-
-- Mac
-
-  ```bash
-  brew cask install vscodium
-  ```
-
-- Arch
-
-  ```bash
-  yay -s vscodium-bin
-  ```
-
-- Snap
-
-  ```bash
-  snap install codium
-  ```
-
-[The Neo Vim Extension](https://github.com/asvetliakov/vscode-neovim) is available in the VSCode marketplace
-
-I recommend using this alongside the VSCode `which-key` extension
-
-Along with some of my config files you can find in `utils/vscode_config`
+See: `:help startuptime`
 
 ## TODO
 
-- Better Documentation
-  https://github.com/gennaro-tedesco/nvim-jqx
+* Improve "Autocommands" management
+* Improve LSP configuration
 
-  https://github.com/mattn/efm-langserver
+## Guides and resources
 
-  https://github.com/nvim-telescope/telescope-media-files.nvim
+* https://neovim.io/doc/user/lua.html
 
-  https://github.com/b3nj5m1n/kommentary
+* https://github.com/nanotee/nvim-lua-guide
 
-  https://github.com/nvim-lua/completion-nvim
+* https://dev.to/vonheikemen/everything-you-need-to-know-to-configure-neovim-using-lua-3h58
 
-  https://github.com/nvim-telescope/telescope-frecency.nvim
+* https://www.old.reddit.com/r/neovim/
 
-## LOW PRIORITY TODO
+## Other Neovim Lua projects and examples
 
-If anyone reading this has any suggestions about implementing any of the following I will accept a PR, but these are not priority.
+* https://github.com/siduck76/NvChad
 
-- multiple cursors
-- galaxyline automatically grab colors from colorscheme
-- tpope/vim-dadbod
-- neovide
-- People asked about vimwiki I kinda hate it but maybe I'll add it
-- vimspector this is included but I don't plan on using it much
-  - can be used with jdb, pdb, gdb, etc...
-- nvim-dap and nvim-dap-virtual-text (ALL DEBUGGING IN NEOVIM IS CONFUSING AND HARD TO GET WORKING OR I'M JUST DUMB)
-- potentially manually link pylance
-- resize with arrows in addition to meta
-- how to support meta key on for macOS?
+* https://github.com/artart222/CodeArt
+
+* https://github.com/crivotz/nv-ide
+
+## Lua resources
+
+* Lua in Y minutes - https://learnxinyminutes.com/docs/lua/
+
+* Lua Quick Guide - https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
+
+* Lua 5.4 Reference Manual - https://www.lua.org/manual/5.4/
+
+## Disclaimer
+
+As all my setups I try to follow the [KISS](https://en.wikipedia.org/wiki/KISS_principle) principle, probably some concepts may not be valid for everyone.
+Then feel free to take what you need but **don't install anything without checking first!**
+
+---
+
+**Thanks to all the authors of the sources mentioned above and to all the others from whom I "stole" some configs :)**
