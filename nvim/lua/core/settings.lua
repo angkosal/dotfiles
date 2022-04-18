@@ -94,12 +94,12 @@ end
 -----------------------------------------------------------
 
 -- Highlight on yank
-exec([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=800}
-  augroup end
-]], false)
+-- exec([[
+--   augroup YankHighlight
+--     autocmd!
+--     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=800}
+--   augroup end
+-- ]], false)
 
 -- Remove whitespace on save
 cmd [[autocmd BufWritePre * :%s/\s\+$//e]]

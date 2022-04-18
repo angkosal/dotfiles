@@ -87,6 +87,9 @@ map("n", "<leader>fw", ":Telescope live_grep <CR>")
 map("n", "<leader>fo", ":Telescope oldfiles <CR>")
 map("n", "<leader>th", ":Telescope themes <CR>")
 
+map("n", "<leader>fm", ":lua vim.lsp.buf.formatting() <CR>")
+
+
 -- Git
 map("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opt )
 map("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opt )
@@ -108,8 +111,12 @@ map("i", "<C-j>", 'copilot#Accept("<CR>")', {expr=true, silent=true})
 -- get current buffer filetype function
 function run_f1()
   -- if it flutter should run restart
-  if (vim.bo.filetype == 'dart' or vim.fn.expand('%') == '__FLUTTER_DEV_LOG__') then
+  if(vim.bo.filetype == 'dart' and string.match(vim.fn.expand('%'), 'test')) then
+    vim.cmd(':!flutter test %')
+  elseif (vim.bo.filetype == 'dart' or vim.fn.expand('%') == '__FLUTTER_DEV_LOG__') then
     vim.cmd("lua require('flutter-tools.commands').restart()")
+  else
+    vim.cmd(":!make<CR>")
   end
 end
 function run_f5()

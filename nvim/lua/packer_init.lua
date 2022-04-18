@@ -90,12 +90,12 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
-  }
+  --use {
+  --    'numToStr/Comment.nvim',
+  --    config = function()
+  --        require('Comment').setup()
+  --    end
+  --}
   use {
     'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim',
@@ -107,5 +107,16 @@ return packer.startup(function()
   use {
     "kdheepak/lazygit.nvim"
   }
+
   use {"rafamadriz/friendly-snippets"}
+  use {"github/copilot.vim"}
+  -- use{
+  --   "zbirenbaum/copilot.lua",
+  --   event = {"VimEnter"},
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup()
+  --     end, 100)
+  --   end,
+  -- }
 end)
