@@ -87,9 +87,6 @@ map("n", "<leader>fw", ":Telescope live_grep <CR>")
 map("n", "<leader>fo", ":Telescope oldfiles <CR>")
 map("n", "<leader>th", ":Telescope themes <CR>")
 
-map("n", "<leader>fm", ":lua vim.lsp.buf.formatting() <CR>")
-
-
 -- Git
 map("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opt )
 map("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opt )
