@@ -54,6 +54,16 @@ opt.lazyredraw = true                 -- Faster scrolling
 opt.synmaxcol = 240                   -- Max column for syntax highlight
 opt.updatetime = 400                  -- ms to wait for trigger 'document_highlight'
 
+
+-----------------------------------------------------------
+-- Tabline
+-----------------------------------------------------------
+function _G.nvim_tabline()
+  return require('core.utils').tabline()
+end
+vim.o.showtabline = 2
+vim.o.tabline = '%!v:lua.nvim_tabline()'
+vim.g.loaded_nvim_tabline = 1
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
