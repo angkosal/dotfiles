@@ -110,6 +110,13 @@ return packer.startup(function()
 
   use {"rafamadriz/friendly-snippets"}
   use {"github/copilot.vim"}
+  use {
+    'TimUntersberger/neogit',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim'
+    }
+  }
   -- use{
   --   "zbirenbaum/copilot.lua",
   --   event = {"VimEnter"},
