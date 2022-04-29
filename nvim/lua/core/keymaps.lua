@@ -32,6 +32,7 @@ map('', '<right>', '<nop>')
 
 -- Fast saving with <leader> and s
 map('n', '<leader>w', ':w!<CR>')
+map('n', '<C-s>', ':w!<CR>')
 
 -- Move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h')
@@ -101,6 +102,9 @@ map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opt )
 map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opt )
 map("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", opt )
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opt )
+-- Git v-mode
+map("v", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opt )
+map("v", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opt )
 
 -- Copilot
 map("i", "<C-j>", 'copilot#Accept("<CR>")', {expr=true, silent=true})
