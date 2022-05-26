@@ -49,6 +49,9 @@ return packer.startup(function()
 
   use { 'rose-pine/neovim', as = 'rose-pine' }
   use 'folke/tokyonight.nvim'
+  use { "ellisonleao/gruvbox.nvim" }
+  use 'bluz71/vim-nightfly-guicolors'
+  use 'bluz71/vim-moonfly-colors'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -67,7 +70,7 @@ return packer.startup(function()
 
   -- Statusline
   use {
-    'famiu/feline.nvim',
+    'feline-nvim/feline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
@@ -90,12 +93,12 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  --use {
-  --    'numToStr/Comment.nvim',
-  --    config = function()
-  --        require('Comment').setup()
-  --    end
-  --}
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
   use {
     'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim',
