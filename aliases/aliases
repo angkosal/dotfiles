@@ -8,15 +8,6 @@ alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
 
-alias open=xdg-open
-alias bigf= 'find / -xdev -type f -size +500M'  # display "big" files > 500M
-
-# +-----+
-# | X11 |
-# +-----+
-
-alias xpropc='xprop | grep WM_CLASS' # display xprop class
-
 # +-----+
 # | Zsh |
 # +-----+
@@ -69,67 +60,6 @@ alias egrep='egrep --color=auto'
 # +------+
 
 alias pg='ping 8.8.8.8'
-
-# +----+
-# | bc |
-# +----+
-
-alias bc="bc -q"
-
-# +-----+
-# | bat |
-# +-----+
-
-alias batl='bat --paging=never -l log'
-
-# +--------+
-# | pacman |
-# +--------+
-
-alias paci='sudo pacman -S'               # install
-alias pachi='sudo pacman -Ql'             # Pacman Has Installed - what files where installed in a package
-alias pacs='sudo pacman -Ss'              # search
-alias pacu='sudo pacman -Syu'             # update
-alias pacr='sudo pacman -R'               # remove package but not dependencies
-alias pacrr='sudo pacman -Rs'             # remove package with unused dependencies by other softwares
-alias pacrc='sudo pacman -Sc'             # remove pacman's cache
-alias pacro='pacman -Rns $(pacman -Qtdq)'
-alias pacrl='rm /var/lib/pacman/db.lck'   # pacman remove locks
-alias pacls="sudo pacman -Qe"
-alias pacc='sudo pacman -Sc'
-alias paccc='sudo pacman -Scc'            # empty the whole cache
-
-# +-----+
-# | yay |
-# +-----+
-
-alias yayi='yay -S'     # install
-alias yayhi='yay -Ql'   # Yay Has Installed - what files where installed in a package
-alias yays='yay -Ss'    # search
-alias yayu='yay -Syu'   # update
-alias yayr='yay -R'     # remove package but not dependencies
-alias yayrr='yay -Rs'   # remove package with unused dependencies by other softwares
-alias yayrc='yay -Sc'   # remove yay's cache
-alias yayls="yay -Qe"
-
-# +--------+
-# | netctl |
-# +--------+
-
-alias wifi='sudo wifi-menu -o'
-
-
-# +------+
-# | Hugo |
-# +------+
-
-alias hugostart="hugo server -DEF --ignoreCache"
-
-# +--------+
-# | muffet |
-# +--------+
-
-alias deadlink="muffet -t 20"
 
 # +---------+
 # | netstat |
@@ -224,11 +154,6 @@ alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 alias dot="$HOME/dotfiles"
 
-# Mindmaps
-# alias freebrain="freemind $CLOUD/knowledge_base/_BRAINSTORMING/*.mm &"
-# alias freelists="freemind $CLOUD/knowledge_base/_LISTS/*.mm &"
-# alias freepain="freemind $CLOUD/knowledge_base/_PROBLEMS/*.mm &"
-
 # +--------+
 # | Golang |
 # +--------+
@@ -239,21 +164,6 @@ alias dot="$HOME/dotfiles"
 # alias goc="go clean -i"
 # alias gta="go test ./..."       # go test all
 # alias gia="go install ./..."    # go install all
-
-# Clojure
-# alias cljrepl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"0.1.4\"}}}" -m rebel-readline.main'
-
-
-# +--------+
-# | Server |
-# +--------+
-
-# My server
-alias live='ssh root@45.76.158.60'
-alias tserver='ssh -i ~/code/keys/NewCashSystem.pem ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com'
-alias utserver='ssh -i ~/code/keys/movies.pem admin@18.136.131.54'
-alias trsup='scp -i ~/code/keys/NewCashSystem.pem -r /mnt/d/Work/new-cash-system/client/build/* ec2-user@ec2-18-163-114-233.ap-east-1.compute.amazonaws.com:/srv/live_cash_pro/'
-alias creditsys='ssh -i ~/code/keys/credit-sys.pem admin@16.162.76.148'
 
 # +--------+
 # | Qrcode |
@@ -270,25 +180,4 @@ alias qrcode='qrcodeFunction'
 # +---------+
 
 alias art="php artisan"
-
-## Useful aliases
-alias grubup="sudo update-grub"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
-alias tarnow='tar -acf '
-alias untar='tar -zxvf '
-alias wget='wget -c '
-alias rmpkg="sudo pacman -Rdd"
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias hw='hwinfo --short'                                   # Hardware Info
-alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
-
-# Get fastest mirrors 
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist" 
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist" 
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist" 
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist" 
 
