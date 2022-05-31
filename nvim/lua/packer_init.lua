@@ -40,7 +40,8 @@ return packer.startup(function()
   use 'liuchengxu/vista.vim'
 
   -- Treesitter interface
-  use 'nvim-treesitter/nvim-treesitter'
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Color schemes
   use 'navarasu/onedark.nvim'
