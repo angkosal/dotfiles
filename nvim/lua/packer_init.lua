@@ -41,7 +41,7 @@ return packer.startup(function()
 
   -- Treesitter interface
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use {'nvim-treesitter/nvim-treesitter-textobjects'}
 
   -- Color schemes
   use 'navarasu/onedark.nvim'
@@ -120,6 +120,12 @@ return packer.startup(function()
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim'
     }
+  }
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({enable = true})
+    end
   }
   -- use{
   --   "zbirenbaum/copilot.lua",
