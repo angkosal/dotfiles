@@ -44,6 +44,8 @@ map('n', 'tj', '<C-w>j')
 map('n', 'tk', '<C-w>k')
 map('n', 'tl', '<C-w>l')
 
+-- close tab
+map('n', ',c', ':tabclose<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
