@@ -148,15 +148,7 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 2. Install [npm](https://github.com/npm/cli) (for download the packages of LSP language servers)
 
-3. Download [this repository](https://github.com/brainfucksec/neovim-lua) with `git` and copy the `nvim` folder in the `${HOME}/.config` directory (make a backup of your current `nvim` folder if necessary):
-
-```term
-git clone https://github.com/brainfucksec/neovim-lua.git
-cd neovim-lua/
-cp -Rv nvim ~/.config/
-```
-
-4. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
+3. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
 
 ```term
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
