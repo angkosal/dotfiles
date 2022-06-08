@@ -121,19 +121,4 @@ return packer.startup(function()
       'sindrets/diffview.nvim'
     }
   }
-  use {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup({enable = true})
-    end
-  }
-  -- use{
-  --   "zbirenbaum/copilot.lua",
-  --   event = {"VimEnter"},
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup()
-  --     end, 100)
-  --   end,
-  -- }
 end)
