@@ -125,7 +125,7 @@ cmd [[autocmd FileType text,markdown,html,xhtml,javascript setlocal cc=0]]
 
 -- 2 spaces for selected filetypes
 cmd [[
-  autocmd FileType xml,html,xhtml,css,scss,typescript,typescriptreact,lua,yaml,dart setlocal shiftwidth=2 tabstop=2
+  autocmd FileType xml,html,xhtml,css,scss,javascript,javascriptreact,typescript,typescriptreact,lua,yaml,dart setlocal shiftwidth=2 tabstop=2
 ]]
 cmd [[
   autocmd FileType go setlocal shiftwidth=8 tabstop=8
