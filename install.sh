@@ -19,6 +19,7 @@ projects=(
   #rofi
   #alacritty
   tmux
+  tmuxp
   nvim
   zsh
 )
