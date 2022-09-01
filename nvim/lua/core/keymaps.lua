@@ -91,6 +91,7 @@ map("n", "<leader>fo", ":Telescope oldfiles <CR>")
 map("n", "<leader>th", ":Telescope themes <CR>")
 
 -- Git
+map("n", "<leader>gg", "<cmd>Neogit<cr>", opt )
 map("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opt )
 map("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opt )
 map("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", opt )
@@ -103,7 +104,8 @@ map("n", "<leader>go", "<cmd>Telescope git_status<cr>", opt )
 map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opt )
 map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opt )
 map("n", "<leader>gC", "<cmd>Telescope git_bcommits<cr>", opt )
-map("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opt )
+map("n", "<leader>gd", "<cmd>DiffviewOpen <cr>", opt )
+map("n", "<leader>gD", "<cmd>Gitsigns diffthis HEAD<cr>", opt )
 -- Git v-mode
 map("v", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opt )
 map("v", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opt )
