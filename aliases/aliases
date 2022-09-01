@@ -181,3 +181,4 @@ alias qrcode='qrcodeFunction'
 
 alias art="php artisan"
 
+alias pgstart="pg_ctl -D /opt/homebrew/var/postgres start"
