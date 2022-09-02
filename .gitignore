@@ -1,3 +1,4 @@
 nvim/autoload/plugged
 vifm/vifminfo
 nvim/.netrwhist
+__pycache__
