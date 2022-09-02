@@ -14,7 +14,8 @@ M.tabline = function()
   local options = {
     show_index = true,
     show_modify = true,
-    modify_indicator = '[+]',
+    -- modify_indicator = '[+]',
+    modify_indicator = '+',
     no_name = '[No Name]',
   }
   local s = ''
@@ -38,7 +39,8 @@ M.tabline = function()
       end
       -- buf name
       if bufname ~= '' then
-          s = s .. '[' .. fn.fnamemodify(bufname, ':t') .. '] '
+          -- s = s .. '[' .. fn.fnamemodify(bufname, ':t') .. '] '
+          s = s .. fn.fnamemodify(bufname, ':t')
       else
           s = s .. options.no_name .. ' '
       end

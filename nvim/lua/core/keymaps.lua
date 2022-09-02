@@ -71,8 +71,8 @@ map("n", "<M-l>", ":vertical resize +2<CR>", opt)
 map('n', '<leader>;', ':Alpha<CR>')            -- open/close
 map('n', '<leader>c', ':Telescope commands<CR>')            -- open/close
 map('n', '<leader>q', ':qa!<CR>')
-map("n", '<leader>/', ":lua require('Comment.api').toggle_current_linewise()<CR>")
-map("v", '<leader>/', ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>")
+map("n", '<leader>/', "<Plug>(comment_toggle_linewise)")
+map("v", '<leader>/', "<Plug>(comment_toggle_linewise_visual)")
 
 -- NvimTree
 map('n', '<leader>e', ':NvimTreeToggle<CR>')            -- open/close
