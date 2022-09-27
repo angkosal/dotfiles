@@ -46,6 +46,8 @@ map('n', 'tl', '<C-w>l')
 
 -- close tab
 map('n', ',c', ':tabclose<CR>')
+-- no highlighting search
+map('n', ',<space>', ':noh<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -54,9 +56,6 @@ map('n', ',c', ':tabclose<CR>')
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
-
--- Vista tag-viewer
-map('n', '<C-m>', ':Vista!!<CR>') -- open/close
 
 map("n", "<Tab>", "%", opt)
 map("v", "<Tab>", "%", opt)
@@ -68,10 +67,13 @@ map("n", "<M-k>", ":resize +2<CR>", opt)
 map("n", "<M-h>", ":vertical resize -2<CR>", opt)
 map("n", "<M-l>", ":vertical resize +2<CR>", opt)
 
+-- Vista tag-viewer
+map('n', '<leader>v', ':Vista!!<CR>') -- open/close
+
 map('n', '<leader>;', ':Alpha<CR>')            -- open/close
 map('n', '<leader>c', ':Telescope commands<CR>')            -- open/close
 map('n', '<leader>q', ':qa!<CR>')
-map("n", '<leader>/', "<Plug>(comment_toggle_linewise)")
+map("n", '<leader>/', '<Plug>(comment_toggle_linewise_current)')
 map("v", '<leader>/', "<Plug>(comment_toggle_linewise_visual)")
 
 -- NvimTree
