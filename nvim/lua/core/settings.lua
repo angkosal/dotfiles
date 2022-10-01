@@ -15,6 +15,7 @@ local g = vim.g         				      -- Global variables
 local opt = vim.opt         		      -- Set options (global/buffer/windows-scoped)
 --local fn = vim.fn       				    -- Call Vim functions
 
+vim.wo.wrap = false
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
