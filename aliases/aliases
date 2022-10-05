@@ -175,6 +175,15 @@ qrcodeFunction() {
 }
 alias qrcode='qrcodeFunction'
 
+# +----------+
+# | Calendar |
+# +----------+
+
+calendarFunction() {
+  $HOME/dotfiles/calendar/calen.py $1
+}
+alias calen='calendarFunction'
+
 # +---------+
 # | Laravel |
 # +---------+
