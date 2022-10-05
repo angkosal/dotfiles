@@ -116,7 +116,7 @@ end
 -- Remove whitespace on save
 cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 -- Format on save
-cmd [[autocmd BufWritePre * :lua vim.lsp.buf.formatting_sync()]]
+cmd [[autocmd BufWritePre * :lua vim.lsp.buf.format()]]
 
 -- Don't auto commenting new lines
 cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
