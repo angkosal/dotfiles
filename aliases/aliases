@@ -29,7 +29,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # +----+
-# | ls |
+# | cd |
 # +----+
 
 alias ..='cd ..'
