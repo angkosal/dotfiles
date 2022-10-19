@@ -21,7 +21,7 @@ projects=(
   tmux
   tmuxp
   nvim
-  zsh
+  #zsh
 )
 
 echo "Symlinking files..."
