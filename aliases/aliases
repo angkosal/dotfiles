@@ -149,7 +149,7 @@ alias lg='lazygit'
 # +----------+
 
 # Folders
-alias work="$HOME/code"
+alias work="$HOME/work"
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 alias dot="$HOME/dotfiles"
