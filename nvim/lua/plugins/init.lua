@@ -55,6 +55,10 @@ return packer.startup(function()
   use 'bluz71/vim-moonfly-colors'
 
   -- LSP
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  }
   use 'neovim/nvim-lspconfig'
 
   -- Autocomplete
@@ -114,11 +118,4 @@ return packer.startup(function()
 
   use {"rafamadriz/friendly-snippets"}
   --use {"github/copilot.vim"}
-  use {
-    'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    }
-  }
 end)
