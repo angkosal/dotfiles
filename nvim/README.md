@@ -159,6 +159,13 @@ Open Neovim and run `:PackerSync` command.
 
 See: https://github.com/wbthomason/packer.nvim#quickstart
 
+4. Mason lsp manager may need to add that executable path
+```bash
+if [[ -d "$HOME/.local/share/nvim/mason/bin" ]]; then
+  export PATH=$HOME/.local/share/nvim/mason/bin:$PATH
+fi
+```
+
 ## LSP Configuration
 
 1. Install LSP language servers with `npm`
