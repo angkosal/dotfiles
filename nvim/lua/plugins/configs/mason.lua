@@ -1,17 +1,27 @@
-local present, mason = pcall(require, "mason")
+local present, mason = pcall(require, 'mason')
 
 if not present then
-  return
+	return
 end
 
-local present1, mason_lsp = pcall(require, "mason-lspconfig")
+local present1, mason_lsp = pcall(require, 'mason-lspconfig')
 if not present1 then
-  return
+	return
 end
 
-local precent_nvim_lsp, nvim_lsp = pcall(require, "lspconfig")
+local precent_nvim_lsp, nvim_lsp = pcall(require, 'lspconfig')
 if not precent_nvim_lsp then
-  return
+	return
+end
+
+local precent_null_ls, null_ls = pcall(require, 'null-ls')
+if not precent_null_ls then
+	return
+end
+
+local precent_mason_null_ls, mason_null_ls = pcall(require, 'mason-null-ls')
+if not precent_mason_null_ls then
+	return
 end
 
 -- -- Add additional capabilities supported by nvim-cmp
@@ -80,26 +90,26 @@ end
 -- vim.api.nvim_create_augroup("_mason", { clear = true })
 
 local options = {
-  PATH = "skip",
-  ui = {
-    icons = {
-      package_pending = " ",
-      package_installed = " ",
-      package_uninstalled = " ﮊ",
-    },
+	PATH = 'skip',
+	ui = {
+		icons = {
+			package_pending = ' ',
+			package_installed = ' ',
+			package_uninstalled = ' ﮊ',
+		},
 
-    keymaps = {
-      toggle_server_expand = "<CR>",
-      install_server = "i",
-      update_server = "u",
-      check_server_version = "c",
-      update_all_servers = "U",
-      check_outdated_servers = "C",
-      uninstall_server = "X",
-      cancel_installation = "<C-c>",
-    },
-  },
-  max_concurrent_installers = 10,
+		keymaps = {
+			toggle_server_expand = '<CR>',
+			install_server = 'i',
+			update_server = 'u',
+			check_server_version = 'c',
+			update_all_servers = 'U',
+			check_outdated_servers = 'C',
+			uninstall_server = 'X',
+			cancel_installation = '<C-c>',
+		},
+	},
+	max_concurrent_installers = 10,
 }
 
 -- vim.api.nvim_create_user_command("MasonInstallAll", function()
@@ -108,26 +118,44 @@ local options = {
 
 mason.setup(options)
 mason_lsp.setup({
-  ensure_installed = { "gopls" }
+	ensure_installed = { 'gopls' },
 })
 
-mason_lsp.setup_handlers {
-  -- The first entry (without a key) will be the default handler
-  -- and will be called for each installed server that doesn't have
-  -- a dedicated handler.
-  function (server_name) -- default handler (optional)
-      -- nvim_lsp[server_name].setup {
-      --   on_attach = on_attach,
-      --   capabilities = capabilities,
-      --   flags = {
-      --     debounce_text_changes = 150,
-      --   }
-      -- }
-      nvim_lsp[server_name].setup {}
-  end,
-  -- Next, you can provide a dedicated handler for specific servers.
-  -- For example, a handler override for the `rust_analyzer`:
-  -- ["rust_analyzer"] = function ()
-  --     require("rust-tools").setup {}
-  -- end
-}
+mason_lsp.setup_handlers({
+	-- The first entry (without a key) will be the default handler
+	-- and will be called for each installed server that doesn't have
+	-- a dedicated handler.
+	function(server_name) -- default handler (optional)
+		-- nvim_lsp[server_name].setup {
+		--   on_attach = on_attach,
+		--   capabilities = capabilities,
+		--   flags = {
+		--     debounce_text_changes = 150,
+		--   }
+		-- }
+		nvim_lsp[server_name].setup({})
+	end,
+	-- Next, you can provide a dedicated handler for specific servers.
+	-- For example, a handler override for the `rust_analyzer`:
+	-- ["rust_analyzer"] = function ()
+	--     require("rust-tools").setup {}
+	-- end
+})
+
+mason_null_ls.setup({
+	ensure_installed = { 'stylua' },
+})
+
+mason_null_ls.setup_handlers({
+	function(source_name, methods)
+		-- all sources with no handler get passed here
+		-- Keep original functionality of `automatic_setup = true`
+		require('mason-null-ls.automatic_setup')(source_name, methods)
+	end,
+	stylua = function(source_name, methods)
+		null_ls.register(null_ls.builtins.formatting.stylua)
+	end,
+})
+
+-- will setup any installed and configured sources above
+null_ls.setup()
