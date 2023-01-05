@@ -71,46 +71,44 @@ map('n', '<M-l>', ':vertical resize +2<CR>', opt)
 map('n', '<leader>m', ':Vista!!<CR>') -- open/close
 
 map('n', '<leader>;', ':Alpha<CR>') -- open/close
-map('n', '<leader>c', ':Telescope commands<CR>') -- open/close
-map('n', '<leader>q', ':qa!<CR>')
-map('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)')
-map('v', '<leader>/', '<Plug>(comment_toggle_linewise_visual)')
+map('n', '<leader>c', ':Telescope commands<CR>', { desc = 'Commands' }) -- open/close
+map('n', '<leader>q', ':qa!<CR>', { desc = 'Quick' })
+map('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', { desc = 'Comment' })
+map('v', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', { desc = 'Comment' })
 
 -- NvimTree
-map('n', '<leader>e', ':NvimTreeToggle<CR>') -- open/close
-map('n', '<leader>r', ':NvimTreeRefresh<CR>') -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
+map('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle Menu' }) -- open/close
+map('n', '<leader>r', ':NvimTreeRefresh<CR>', { desc = 'Refresh Menu' }) -- refresh
+map('n', '<leader>n', ':NvimTreeFindFile<CR>', { desc = 'NvimTreeFindFile' }) -- search file
 
 -- Telescrope
-map('n', '<leader>fb', ':Telescope buffers <CR>')
-map('n', '<leader>ff', ':Telescope find_files <CR>')
-map('n', '<leader>fa', ':Telescope find_files follow=true no_ignore=true hidden=true <CR>')
-map('n', '<leader>cm', ':Telescope git_commits <CR>')
-map('n', '<leader>gt', ':Telescope git_status <CR>')
+map('n', '<leader>fb', ':Telescope buffers <CR>', { desc = 'Find Buffers' })
+map('n', '<leader>ff', ':Telescope find_files <CR>', { desc = 'Find Files' })
+map('n', '<leader>fa', ':Telescope find_files follow=true no_ignore=true hidden=true <CR>', { desc = 'Find All' })
 map('n', '<leader>fh', ':Telescope help_tags <CR>')
 map('n', '<leader>fw', ':Telescope live_grep <CR>')
 map('n', '<leader>fo', ':Telescope oldfiles <CR>')
 map('n', '<leader>th', ':Telescope themes <CR>')
 
 -- Git
-map('n', '<leader>gg', '<cmd>Neogit<cr>', opt)
-map('n', '<leader>gj', "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opt)
-map('n', '<leader>gk', "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opt)
-map('n', '<leader>gl', "<cmd>lua require 'gitsigns'.blame_line()<cr>", opt)
-map('n', '<leader>gp', "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opt)
-map('n', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opt)
-map('n', '<leader>gR', "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", opt)
-map('n', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opt)
-map('n', '<leader>gu', "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", opt)
-map('n', '<leader>go', '<cmd>Telescope git_status<cr>', opt)
-map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', opt)
-map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>', opt)
-map('n', '<leader>gC', '<cmd>Telescope git_bcommits<cr>', opt)
-map('n', '<leader>gd', '<cmd>DiffviewOpen <cr>', opt)
-map('n', '<leader>gD', '<cmd>Gitsigns diffthis HEAD<cr>', opt)
+map('n', '<leader>gg', '<cmd>Git<cr>', { desc = 'Git' })
+map('n', '<leader>gj', "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { desc = 'Next hunk' })
+map('n', '<leader>gk', "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { desc = 'Prev hunk' })
+map('n', '<leader>gl', "<cmd>lua require 'gitsigns'.blame_line()<cr>", { desc = 'Blame line' })
+map('n', '<leader>gp', "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = 'Preview hunk' })
+map('n', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = 'Reset hunk' })
+map('n', '<leader>gR', "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = 'Reset Buff' })
+map('n', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = 'Stage hunk' })
+map('n', '<leader>gu', "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", { desc = 'Undo stage hunk' })
+map('n', '<leader>go', '<cmd>Telescope git_status<cr>', { desc = 'Git status' })
+map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', { desc = 'Git branches' })
+map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>', { desc = 'Git commits' })
+map('n', '<leader>gC', '<cmd>Telescope git_bcommits<cr>', { desc = 'Git bcommits' })
+map('n', '<leader>gd', '<cmd>Gdiffsplit <cr>', { desc = 'Git diff' })
+map('n', '<leader>gD', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Git diff HEAD' })
 -- Git v-mode
-map('v', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opt)
-map('v', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opt)
+map('v', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = 'Reset hunk' })
+map('v', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = 'Stage hunk' })
 
 -- Copilot
 map('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
@@ -123,7 +121,9 @@ function run_f1()
 	elseif vim.bo.filetype == 'dart' or vim.fn.expand('%') == '__FLUTTER_DEV_LOG__' then
 		vim.cmd("lua require('flutter-tools.commands').restart()")
 	else
-		vim.cmd(':!make<CR>')
+		-- vim.cmd(':!make<CR>')
+		-- vim.cmd('make')
+		vim.cmd(':!yarn test %')
 	end
 end
 function run_f5()
@@ -139,7 +139,7 @@ map('', '<F5>', '<ESC>:lua run_f5()<CR>', opt)
 
 -- Buffer
 for i = 1, 9 do
-	map('n', '<leader>' .. i, ':' .. i .. 'tabnext<CR>', opt) -- example to delete the buffer
+	map('n', '<leader>' .. i, ':' .. i .. 'tabnext<CR>', { desc = 'Tab ' .. i }) -- example to delete the buffer
 end
 map('n', 'tn', ':tabnew<CR>:Telescope find_files<CR>', opt) -- open new tab and find files
-map('n', '<leader>d', ":lua require('core.utils').close_buffer() <CR>") -- close  buffer
+map('n', '<leader>d', ":lua require('core.utils').close_buffer() <CR>", { desc = 'Close buffer' }) -- close  buffer

@@ -47,9 +47,6 @@ return packer.startup(function()
 
 	use('tanvirtin/monokai.nvim')
 
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
-	use('folke/tokyonight.nvim')
-	use({ 'ellisonleao/gruvbox.nvim' })
 	use('bluz71/vim-nightfly-guicolors')
 	use('bluz71/vim-moonfly-colors')
 
@@ -83,6 +80,8 @@ return packer.startup(function()
 	})
 
 	-- git labels
+	use('tpope/vim-fugitive')
+	use('tpope/vim-rhubarb')
 	use({
 		'lewis6991/gitsigns.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
@@ -121,4 +120,20 @@ return packer.startup(function()
 
 	use({ 'rafamadriz/friendly-snippets' })
 	--use {"github/copilot.vim"}
+	use({
+		'folke/which-key.nvim',
+		-- config = function()
+		-- require('which-key').setup({})
+		-- end,
+	})
+	use({
+		'dharmx/telescope-media.nvim',
+		config = function()
+			require('telescope').load_extension('media')
+		end,
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope.nvim',
+		},
+	})
 end)
