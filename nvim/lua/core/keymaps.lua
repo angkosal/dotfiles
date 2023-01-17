@@ -121,13 +121,13 @@ function run_f1()
 	elseif vim.bo.filetype == 'dart' or vim.fn.expand('%') == '__FLUTTER_DEV_LOG__' then
 		vim.cmd("lua require('flutter-tools.commands').restart()")
 	elseif
-		vim.bo.filetype == 'javascript'
+		(vim.bo.filetype == 'javascript' or vim.bo.filetype == 'typescript')
 		and (string.match(vim.fn.expand('%'), '.test.') or string.match(vim.fn.expand('%'), '-spec.'))
 	then
 		vim.cmd(':!yarn test %')
 	else
-		vim.cmd(':!make<CR>')
-		-- vim.cmd('make')
+		-- vim.cmd(':make<CR>')
+		vim.cmd('make')
 	end
 end
 function run_f5()
