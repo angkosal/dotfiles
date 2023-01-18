@@ -1,4 +1,4 @@
-local vi_mode_utils = require('feline.providers.vi_mode')
+-- local vi_mode_utils = require('feline.providers.vi_mode')
 -----------------------------------------------------------
 -- Define keymaps of Neovim and installed plugins.
 -----------------------------------------------------------
