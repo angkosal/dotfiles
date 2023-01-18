@@ -75,9 +75,13 @@ return packer.startup(function()
 
 	-- Statusline
 	use({
-		'feline-nvim/feline.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 	})
+	-- use({
+	-- 	'feline-nvim/feline.nvim',
+	-- 	requires = { 'kyazdani42/nvim-web-devicons' },
+	-- })
 
 	-- git labels
 	use('tpope/vim-fugitive')
