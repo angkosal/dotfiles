@@ -43,12 +43,7 @@ return packer.startup(function()
 	use({ 'nvim-treesitter/nvim-treesitter-textobjects' })
 
 	-- Color schemes
-	use('navarasu/onedark.nvim')
-
-	use('tanvirtin/monokai.nvim')
-
 	use('bluz71/vim-nightfly-guicolors')
-	use('bluz71/vim-moonfly-colors')
 
 	-- LSP
 	use({
