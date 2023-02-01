@@ -126,9 +126,9 @@ return packer.startup(function()
 		-- end,
 	})
 	use({
-		'dharmx/telescope-media.nvim',
+		'nvim-telescope/telescope-media-files.nvim',
 		config = function()
-			require('telescope').load_extension('media')
+			require('telescope').load_extension('media_files')
 		end,
 		requires = {
 			'nvim-lua/plenary.nvim',
