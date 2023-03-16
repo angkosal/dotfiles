@@ -79,7 +79,7 @@ alias nvimcu='rm -I $VIMCONFIG/undo/*'            # clean the vim undo
 alias nviml='nvim -w $VIMCONFIG/vimlog "$@"'      # log the keystrokes
 
 # git
-alias gs='git status'
+alias gs='git status -s -b'
 alias ga='git add'
 alias gp='git push'
 alias gpo='git push origin'
