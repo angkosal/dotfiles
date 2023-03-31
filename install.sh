@@ -15,7 +15,7 @@ cd "$HERE"
 projects=(
   #i3
   #i3status
-  #git
+  git
   #rofi
   #alacritty
   tmux
