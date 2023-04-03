@@ -2,130 +2,113 @@
 -- Plugin manager configuration file
 -----------------------------------------------------------
 
--- Plugin manager: packer.nvim
--- url: https://github.com/wbthomason/packer.nvim
+-- Plugin manager: lazy.nvim
+-- url: https://github.com/folke/lazy.nvim
 
 -- For information about installed plugins see the README
 --- neovim-lua/README.md
 --- https://github.com/brainfucksec/neovim-lua#readme
 
-local cmd = vim.cmd
-cmd([[packadd packer.nvim]])
-
-local packer = require('packer')
-
 -- Add packages
-return packer.startup(function()
-	use('wbthomason/packer.nvim') -- packer can manage itself
-
+require('lazy').setup({
+	-- use('wbthomason/packer.nvim') -- packer can manage itself
+	'nvim-lua/plenary.nvim',
 	-- File explorer
-	use('kyazdani42/nvim-tree.lua')
+	'kyazdani42/nvim-tree.lua',
 
 	-- Indent line
-	use('lukas-reineke/indent-blankline.nvim')
+	'lukas-reineke/indent-blankline.nvim',
 
 	-- Autopair
-	use({
+	{
 		'windwp/nvim-autopairs',
 		config = function()
 			require('nvim-autopairs').setup()
 		end,
-	})
+	},
 
 	-- Icons
-	use('kyazdani42/nvim-web-devicons')
+	'kyazdani42/nvim-web-devicons',
 
 	-- Tag viewer
-	use('liuchengxu/vista.vim')
+	'liuchengxu/vista.vim',
 
 	-- Treesitter interface
-	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-	use({ 'nvim-treesitter/nvim-treesitter-textobjects' })
+	{ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+	{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 
 	-- Color schemes
-	use('bluz71/vim-nightfly-guicolors')
+	'bluz71/vim-nightfly-guicolors',
 
 	-- LSP
-	use({
+	{
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
-	})
-	use({
+	},
+	{
 		'jose-elias-alvarez/null-ls.nvim',
 		'jayp0521/mason-null-ls.nvim',
-	})
-	use('neovim/nvim-lspconfig')
+	},
+	'neovim/nvim-lspconfig',
 
 	-- Autocomplete
-	use({
-		'hrsh7th/nvim-cmp',
-		requires = {
-			'L3MON4D3/LuaSnip',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-buffer',
-			'saadparwaiz1/cmp_luasnip',
-		},
-	})
+	'L3MON4D3/LuaSnip',
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-buffer',
+	'saadparwaiz1/cmp_luasnip',
+	'hrsh7th/nvim-cmp',
 
 	-- Statusline
-	use({
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-	})
-	-- use({
-	-- 	'feline-nvim/feline.nvim',
-	-- 	requires = { 'kyazdani42/nvim-web-devicons' },
-	-- })
+	'nvim-lualine/lualine.nvim',
 
 	-- git labels
-	use('tpope/vim-fugitive')
-	use('tpope/vim-rhubarb')
-	use({
+	'tpope/vim-fugitive',
+	'tpope/vim-rhubarb',
+	{
 		'lewis6991/gitsigns.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			require('gitsigns').setup()
 		end,
-	})
+	},
 
 	-- Dashboard (start screen)
-	use({
+	{
 		'goolord/alpha-nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
-	})
+	},
 
-	use({
+	{
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } },
-	})
-	use({
+	},
+	{
 		'numToStr/Comment.nvim',
 		config = function()
 			require('Comment').setup()
 		end,
-	})
-	use({
+	},
+	{
 		'akinsho/flutter-tools.nvim',
-		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('flutter-tools').setup({})
 		end,
-	})
+	},
 
-	use({
+	{
 		'kdheepak/lazygit.nvim',
-	})
+	},
 
-	use({ 'rafamadriz/friendly-snippets' })
+	{ 'rafamadriz/friendly-snippets' },
 	--use {"github/copilot.vim"}
-	use({
+	{
 		'folke/which-key.nvim',
 		-- config = function()
 		-- require('which-key').setup({})
 		-- end,
-	})
-	use({
+	},
+	{
 		'nvim-telescope/telescope-media-files.nvim',
 		config = function()
 			require('telescope').load_extension('media_files')
@@ -134,5 +117,5 @@ return packer.startup(function()
 			'nvim-lua/plenary.nvim',
 			'nvim-telescope/telescope.nvim',
 		},
-	})
-end)
+	},
+})
