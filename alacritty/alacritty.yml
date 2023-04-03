@@ -546,8 +546,10 @@ font:
 # And optionally:
 #
 # - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Right,                 action: ExpandSelection }
+mouse_bindings:
+  # - { mouse: Right,                 action: ExpandSelection }
+  - { mouse: Right, mode: ~Vi|~Search, action: Copy }
+  - { mouse: Right, action: Paste }
 #  - { mouse: Right,  mods: Control, action: ExpandSelection }
 #  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
