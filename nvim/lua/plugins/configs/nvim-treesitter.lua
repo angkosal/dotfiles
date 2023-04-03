@@ -9,6 +9,7 @@ require('nvim-treesitter.configs').setup({
 	highlight = {
 		enable = true,
 	},
+	ensure_installed = { 'lua', 'vim', 'vimdoc', 'dart', 'typescript' },
 	textobjects = {
 		select = {
 			enable = true,
