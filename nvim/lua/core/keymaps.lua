@@ -81,6 +81,7 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>', { desc = 'NvimTreeFindFile' }) --
 -- Telescrope
 map('n', '<leader>fb', ':Telescope buffers <CR>', { desc = 'Find Buffers' })
 map('n', '<leader>ff', ':Telescope find_files <CR>', { desc = 'Find Files' })
+map('n', '<C-p>', ':Telescope find_files <CR>', { desc = 'Find Files' })
 map('n', '<leader>fa', ':Telescope find_files follow=true no_ignore=true hidden=true <CR>', { desc = 'Find All' })
 map('n', '<leader>fh', ':Telescope help_tags <CR>')
 map('n', '<leader>fw', ':Telescope live_grep <CR>')
@@ -128,6 +129,7 @@ function run_f1()
 		vim.cmd('make')
 	end
 end
+
 function run_f5()
 	-- if it flutter should run
 	if vim.bo.filetype == 'dart' then
