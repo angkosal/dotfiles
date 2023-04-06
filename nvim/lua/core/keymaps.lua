@@ -21,9 +21,6 @@ vim.g.mapleader = ' '
 -- Clear search highlighting with <leader> and c
 map('n', '<C-c>', ':nohl<CR>')
 
--- Map Esc to kk
-map('i', 'jj', '<Esc>')
-
 -- Don't use arrow keys
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
