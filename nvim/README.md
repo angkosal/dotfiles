@@ -6,8 +6,7 @@
 Neovim KISS configuration with Lua
 </h3>
 
-
-[packer.nvim](https://github.com/wbthomason/packer.nvim) -  A use-package inspired plugin manager for Neovim
+[packer.nvim](https://github.com/wbthomason/packer.nvim) - A use-package inspired plugin manager for Neovim
 
 [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) - A File Explorer written In Lua
 
@@ -62,53 +61,53 @@ Neovim KISS configuration with Lua
 
 `/nvim`
 
-* [init.lua](nvim/init.lua): Main configuration file that call `lua` modules
+- [init.lua](nvim/init.lua): Main configuration file that call `lua` modules
 
-* [lua](nvim/lua): Folder of `lua` modules, here reside all the Lua modules that needed. These modules are called from `init.lua` file (see below).
+- [lua](nvim/lua): Folder of `lua` modules, here reside all the Lua modules that needed. These modules are called from `init.lua` file (see below).
 
 See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 `/nvim/lua`
 
-* [packer_init.lua](nvim/lua/packer_init.lua): Load plugins
+- [packer_init.lua](nvim/lua/packer_init.lua): Load plugins
 
 `/nvim/lua/core`
 
-* [settings.lua](nvim/lua/core/settings.lua): General Neovim settings and configuration
+- [settings.lua](nvim/lua/core/settings.lua): General Neovim settings and configuration
 
-* [keymaps.lua](nvim/lua/core/keymaps.lua): Keymaps configuration file, vim/neovim and plugins keymaps.
+- [keymaps.lua](nvim/lua/core/keymaps.lua): Keymaps configuration file, vim/neovim and plugins keymaps.
 
-* [colors.lua](nvim/lua/core/colors.lua): Define Neovim and plugins color scheme
+- [colors.lua](nvim/lua/core/colors.lua): Define Neovim and plugins color scheme
 
 `/nvim/lua/plugins`
 
-* [packer.lua](nvim/lua/plugins/packer.lua): Plugin manager settings
+- [packer.lua](nvim/lua/plugins/packer.lua): Plugin manager settings
 
-* [alpha-nvim.lua](nvim/lua/plugins/alpha-nvim.lua): Dashboard
+- [alpha-nvim.lua](nvim/lua/plugins/alpha-nvim.lua): Dashboard
 
-* [feline.lua](nvim/lua/plugins/feline.lua): Statusline configuration file
+- [feline.lua](nvim/lua/plugins/feline.lua): Statusline configuration file
 
-* [indent-blankline.lua](nvim/lua/plugins/indent-blankline.lua): Indent line
+- [indent-blankline.lua](nvim/lua/plugins/indent-blankline.lua): Indent line
 
-* [nvim-cmp.lua](nvim/lua/plugins/nvim-cmp.lua): Autocompletion settings
+- [nvim-cmp.lua](nvim/lua/plugins/nvim-cmp.lua): Autocompletion settings
 
-* [nvim-lspconfig.lua](nvim/lua/plugins/nvim-lspconfig.lua): LSP configuration (language servers, keybinding)
+- [nvim-lspconfig.lua](nvim/lua/plugins/nvim-lspconfig.lua): LSP configuration (language servers, keybinding)
 
-* [nvim-tree.lua](nvim/lua/plugins/nvim-tree.lua): File manager settings
+- [nvim-tree.lua](nvim/lua/plugins/nvim-tree.lua): File manager settings
 
-* [nvim-treesitter](nvim/lua/plugins/nvim-treesitter): Treesitter interface configuration
+- [nvim-treesitter](nvim/lua/plugins/nvim-treesitter): Treesitter interface configuration
 
-* [vista.lua](nvim/lua/plugins/vista.lua): Tag viewer settings
+- [vista.lua](nvim/lua/plugins/vista.lua): Tag viewer settings
 
 ## Appearance
 
 **Colorschemes:**
 
-* [OneDark](https://github.com/navarasu/onedark.nvim)
+- [OneDark](https://github.com/navarasu/onedark.nvim)
 
-* [Neovim Monokai](https://github.com/tanvirtin/monokai.nvim)
+- [Neovim Monokai](https://github.com/tanvirtin/monokai.nvim)
 
-* [Rose Pine](https://github.com/rose-pine/neovim)
+- [Rose Pine](https://github.com/rose-pine/neovim)
 
 **Fonts:** [Cozette](https://github.com/slavfox/Cozette)
 
@@ -160,6 +159,7 @@ Open Neovim and run `:PackerSync` command.
 See: https://github.com/wbthomason/packer.nvim#quickstart
 
 4. Mason lsp manager may need to add that executable path
+
 ```bash
 if [[ -d "$HOME/.local/share/nvim/mason/bin" ]]; then
   export PATH=$HOME/.local/share/nvim/mason/bin:$PATH
@@ -198,7 +198,7 @@ See: [nvim-lspconfig #doc/server_configurations.md](https://github.com/neovim/nv
 
 The color scheme is defined in the following files (default: OneDark):
 
-* Neovim UI - [nvim/lua/core/settings.lua](nvim/lua/core/settings.lua):
+- Neovim UI - [nvim/lua/core/settings.lua](nvim/lua/core/settings.lua):
 
 ```lua
 -- Load colorscheme
@@ -208,7 +208,7 @@ require('onedark').setup {
 require('onedark').load()
 ```
 
-* Statusline - [nvim/lua/plugins/feline.lua](nvim/lua/plugins/feline.lua):
+- Statusline - [nvim/lua/plugins/feline.lua](nvim/lua/plugins/feline.lua):
 
 ```lua
 -- Set colorscheme (from core/colors.lua/colorscheme_name)
@@ -237,34 +237,34 @@ See: `:help startuptime`
 
 ## TODO
 
-* Improve "Autocommands" management
-* Improve LSP configuration
+- Improve "Autocommands" management
+- Improve LSP configuration
 
 ## Guides and resources
 
-* https://neovim.io/doc/user/lua.html
+- https://neovim.io/doc/user/lua.html
 
-* https://github.com/nanotee/nvim-lua-guide
+- https://github.com/nanotee/nvim-lua-guide
 
-* https://dev.to/vonheikemen/everything-you-need-to-know-to-configure-neovim-using-lua-3h58
+- https://dev.to/vonheikemen/everything-you-need-to-know-to-configure-neovim-using-lua-3h58
 
-* https://www.old.reddit.com/r/neovim/
+- https://www.old.reddit.com/r/neovim/
 
 ## Other Neovim Lua projects and examples
 
-* https://github.com/siduck76/NvChad
+- https://github.com/siduck76/NvChad
 
-* https://github.com/artart222/CodeArt
+- https://github.com/artart222/CodeArt
 
-* https://github.com/crivotz/nv-ide
+- https://github.com/crivotz/nv-ide
 
 ## Lua resources
 
-* Lua in Y minutes - https://learnxinyminutes.com/docs/lua/
+- Lua in Y minutes - https://learnxinyminutes.com/docs/lua/
 
-* Lua Quick Guide - https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
+- Lua Quick Guide - https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
 
-* Lua 5.4 Reference Manual - https://www.lua.org/manual/5.4/
+- Lua 5.4 Reference Manual - https://www.lua.org/manual/5.4/
 
 ## Disclaimer
 
