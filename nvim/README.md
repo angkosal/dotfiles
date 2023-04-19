@@ -1,7 +1,3 @@
-<p align="center">
-<img src="img/logo.png" alt="neovim-lua_logo">
-</p>
-
 <h3 align="center">
 Neovim KISS configuration with Lua
 </h3>
@@ -113,34 +109,6 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 **Icons:** [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 
-## Screenshots
-
-<p align="center">
-<img src="img/banner.png">
-</p>
-
-<details><summary> <b>(Click to expand)</b></summary>
-
-**OneDark (darker)**
-
-![onedark_1](img/1-onedark_1.png)
-
-![onedark_2](img/2-onedark_2.png)
-
-**Monokai**
-
-![monokai_1](img/3-monokai_1.png)
-
-![monokai_2](img/4-monokai_2.png)
-
-**Rosé Pine**
-
-![rose-pine_1](img/5-rose-pine_1.png)
-
-![rose-pine-2](img/6-rose-pine_2.png)
-
-</details>
-
 ## Installation
 
 1. Install [neovim v0.6.x](https://github.com/neovim/neovim/releases/latest)
@@ -222,8 +190,6 @@ local colors = require('core/colors').onedark
 ```vim
 :checkhealth
 ```
-
-![.](img/checkhealth.png)
 
 - You can also use the `startuptime` option to read the nvim startup logs:
 
