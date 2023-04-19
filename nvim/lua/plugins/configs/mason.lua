@@ -97,7 +97,6 @@ local options = {
 			package_installed = ' ',
 			package_uninstalled = ' ﮊ',
 		},
-
 		keymaps = {
 			toggle_server_expand = '<CR>',
 			install_server = 'i',
@@ -144,17 +143,17 @@ mason_lsp.setup_handlers({
 
 mason_null_ls.setup({
 	ensure_installed = { 'stylua' },
-})
-
-mason_null_ls.setup_handlers({
-	function(source_name, methods)
-		-- all sources with no handler get passed here
-		-- Keep original functionality of `automatic_setup = true`
-		require('mason-null-ls.automatic_setup')(source_name, methods)
-	end,
-	stylua = function(source_name, methods)
-		null_ls.register(null_ls.builtins.formatting.stylua)
-	end,
+	automatic_setup = true,
+	handlers = {
+		function(source_name, methods)
+			-- all sources with no handler get passed here
+			-- Keep original functionality of `automatic_setup = true`
+			require('mason-null-ls.automatic_setup')(source_name, methods)
+		end,
+		stylua = function(source_name, methods)
+			null_ls.register(null_ls.builtins.formatting.stylua)
+		end,
+	},
 })
 
 -- will setup any installed and configured sources above
