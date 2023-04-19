@@ -34,7 +34,6 @@ require('nvim-tree').setup({
 	view = {
 		side = 'left',
 		width = 25,
-		hide_root_folder = true,
 	},
 	git = {
 		enable = false,
@@ -48,7 +47,7 @@ require('nvim-tree').setup({
 	renderer = {
 		highlight_git = false,
 		highlight_opened_files = 'none',
-
+		root_folder_label = false,
 		indent_markers = {
 			enable = false,
 		},
