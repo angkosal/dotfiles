@@ -144,27 +144,6 @@ JavaScript, TypeScript - [tsserver](https://github.com/neovim/nvim-lspconfig/blo
 
 See: [nvim-lspconfig #doc/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
-## Set Color Scheme
-
-The color scheme is defined in the following files (default: OneDark):
-
-- Neovim UI - [nvim/lua/core/settings.lua](nvim/lua/core/settings.lua):
-
-```lua
--- Load colorscheme
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
-```
-
-- Statusline - [nvim/lua/plugins/feline.lua](nvim/lua/plugins/feline.lua):
-
-```lua
--- Set colorscheme (from core/colors.lua/colorscheme_name)
-local colors = require('core/colors').onedark
-```
-
 ## Configuration check
 
 - Open nvim and run command `checkhealth`, you should not see any error in the output (except for the one related to the Python 2 interpreter if don't have it):
