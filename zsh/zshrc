@@ -105,6 +105,10 @@ source $HOME/dotfiles/aliases/aliases
 if [ -f "$HOME/dotfiles-personal/aliases/aliases" ]; then
     source $HOME/dotfiles-personal/aliases/aliases
 fi
+if [ -d "$HOME/.local/share/nvim/mason/bin" ]; then
+    export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+fi
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
