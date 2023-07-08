@@ -144,6 +144,16 @@ JavaScript, TypeScript - [tsserver](https://github.com/neovim/nvim-lspconfig/blo
 
 See: [nvim-lspconfig #doc/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
+#### csharp(C#):
+
+    sudo snap install dotnet-sdk --classic --channel=7.0
+    sudo snap alias dotnet-sdk.dotnet dotnet
+
+    sudo snap install dotnet-runtime-70 --classic
+    sudo snap alias dotnet-runtime-70.dotnet dotnet
+
+    :MasonInstall omnisharp-mono
+
 ## Configuration check
 
 - Open nvim and run command `checkhealth`, you should not see any error in the output (except for the one related to the Python 2 interpreter if don't have it):
