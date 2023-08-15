@@ -2,7 +2,7 @@
 Neovim KISS configuration with Lua
 </h3>
 
-[packer.nvim](https://github.com/wbthomason/packer.nvim) - A use-package inspired plugin manager for Neovim
+[lazy.nvim](https://github.com/folke/lazy.nvim) - A use-package inspired plugin manager for Neovim
 
 [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) - A File Explorer written In Lua
 
@@ -47,9 +47,6 @@ Neovim KISS configuration with Lua
 │   │   ├── nvim-tree.lua
 │   │   ├── nvim-treesitter.lua
 │   │   └── vista.lua
-│   └── packer_init.lua
-├── plugin
-│   └── packer_compiled.lua
 └── init.lua
 ```
 
@@ -65,8 +62,6 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 `/nvim/lua`
 
-- [packer_init.lua](nvim/lua/packer_init.lua): Load plugins
-
 `/nvim/lua/core`
 
 - [settings.lua](nvim/lua/core/settings.lua): General Neovim settings and configuration
@@ -76,8 +71,6 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 - [colors.lua](nvim/lua/core/colors.lua): Define Neovim and plugins color scheme
 
 `/nvim/lua/plugins`
-
-- [packer.lua](nvim/lua/plugins/packer.lua): Plugin manager settings
 
 - [alpha-nvim.lua](nvim/lua/plugins/alpha-nvim.lua): Dashboard
 
@@ -115,18 +108,7 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 2. Install [npm](https://github.com/npm/cli) (for download the packages of LSP language servers)
 
-3. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
-
-```term
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-Open Neovim and run `:PackerSync` command.
-
-See: https://github.com/wbthomason/packer.nvim#quickstart
-
-4. Mason lsp manager may need to add that executable path
+3. Mason lsp manager may need to add that executable path
 
 ```bash
 if [[ -d "$HOME/.local/share/nvim/mason/bin" ]]; then
@@ -162,26 +144,15 @@ JavaScript, TypeScript - [tsserver](https://github.com/neovim/nvim-lspconfig/blo
 
 See: [nvim-lspconfig #doc/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
-## Set Color Scheme
+#### csharp(C#):
 
-The color scheme is defined in the following files (default: OneDark):
+    sudo snap install dotnet-sdk --classic --channel=7.0
+    sudo snap alias dotnet-sdk.dotnet dotnet
 
-- Neovim UI - [nvim/lua/core/settings.lua](nvim/lua/core/settings.lua):
+    sudo snap install dotnet-runtime-70 --classic
+    sudo snap alias dotnet-runtime-70.dotnet dotnet
 
-```lua
--- Load colorscheme
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
-```
-
-- Statusline - [nvim/lua/plugins/feline.lua](nvim/lua/plugins/feline.lua):
-
-```lua
--- Set colorscheme (from core/colors.lua/colorscheme_name)
-local colors = require('core/colors').onedark
-```
+    :MasonInstall omnisharp-mono
 
 ## Configuration check
 
