@@ -1,5 +1,3 @@
-Invoke-Expression (&starship init powershell)
-
 function Git-Status { git status }
 function Git-Add { git add $args }
 function Git-Diff { git diff }
@@ -12,9 +10,11 @@ function Qrcode-Gen {
 function Show-Calendar {
     python "$HOME\dotfiles\calendar\calendar.py" $args
 }
+function Php-Artisan { php artisan }
 New-Alias lg lazygit
 New-Alias gs Git-Status
 New-Alias gd Git-Diff
 New-Alias ga Git-Add
 New-Alias qr Qrcode-Gen
 New-Alias calen Show-Calendar
+New-Alias art Php-Artisan
