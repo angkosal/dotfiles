@@ -171,7 +171,7 @@ alias dot="$HOME/dotfiles"
 
 qrcodeFunction() {
   $HOME/dotfiles/qrcode/qc.py $1
-  xdg-open "$HOME/qrcode.png"
+  open "$HOME/qrcode.png"
 }
 alias qrcode='qrcodeFunction'
 
