@@ -5,7 +5,8 @@
 -- Plugin: nvim-treesitter
 -- url: https://github.com/nvim-treesitter/nvim-treesitter
 
-require('nvim-treesitter.configs').setup({
+-- require('nvim-treesitter.configs').setup({
+	local options = {
 	highlight = {
 		enable = true,
 	},
@@ -44,4 +45,6 @@ require('nvim-treesitter.configs').setup({
 			},
 		},
 	},
-})
+}
+
+return options

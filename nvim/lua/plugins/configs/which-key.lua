@@ -4,7 +4,9 @@ if not present then
 	return
 end
 
-local options = {
+local M = {}
+
+M.options = {
 
 	icons = {
 		breadcrumb = '»', -- symbol used in the command line area that shows your active key combo
@@ -36,8 +38,7 @@ local options = {
 
 -- options = require('core.utils').load_override(options, 'folke/which-key.nvim')
 
-wk.setup(options)
-wk.register({
+M.register={
 	g = {
 		name = 'Git',
 	},
@@ -70,4 +71,6 @@ wk.register({
 		},
 		e = { '<cmd>Telescope quickfix<cr>', 'Telescope Quickfix' },
 	},
-}, { prefix = '<leader>' })
+}
+--}, { prefix = '<leader>' })
+return M

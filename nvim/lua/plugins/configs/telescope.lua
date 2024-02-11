@@ -1,6 +1,7 @@
 local actions = require('telescope.actions')
 
-require('telescope').setup({
+-- require('telescope').setup({
+local options = {
 	defaults = {
 		file_ignore_patterns = { 'node_modules' },
 		mappings = {
@@ -18,4 +19,6 @@ require('telescope').setup({
 			find_cmd = 'rg', -- find command (defaults to `fd`)
 		},
 	},
-})
+}
+
+return options

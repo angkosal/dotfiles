@@ -7,7 +7,7 @@
 
 -- For configuration examples see: https://github.com/goolord/alpha-nvim/discussions/16
 
-local alpha = require('alpha')
+-- local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
 
 -- Footer
@@ -44,4 +44,5 @@ dashboard.section.buttons.val = {
 
 dashboard.section.footer.val = footer()
 
-alpha.setup(dashboard.config)
+return dashboard.config
+-- alpha.setup(dashboard.config)

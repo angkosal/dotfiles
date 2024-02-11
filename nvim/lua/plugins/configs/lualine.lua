@@ -1,6 +1,7 @@
 local custom_gruvbox = require('lualine.themes.gruvbox')
 
-require('lualine').setup({
+-- require('lualine').setup({
+	local options = {
 	options = {
 		icons_enabled = true,
 		theme = 'auto', --moonfly
@@ -39,4 +40,5 @@ require('lualine').setup({
 	winbar = {},
 	inactive_winbar = {},
 	extensions = {},
-})
+}
+return options;

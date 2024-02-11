@@ -15,7 +15,8 @@
 
 -- Call setup
 --- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require('nvim-tree').setup({
+-- require('nvim-tree').setup({
+local options = {
 	filters = {
 		dotfiles = false,
 		exclude = { 'custom' },
@@ -84,4 +85,6 @@ require('nvim-tree').setup({
 			},
 		},
 	},
-})
+}
+
+return options;

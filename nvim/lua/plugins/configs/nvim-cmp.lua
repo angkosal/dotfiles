@@ -8,7 +8,8 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
-cmp.setup({
+-- cmp.setup({
+local options = {
 	-- Load snippet support
 	snippet = {
 		expand = function(args)
@@ -63,7 +64,9 @@ cmp.setup({
 		{ name = 'path' },
 		{ name = 'buffer' },
 	},
-})
+}
 
 require('luasnip.loaders.from_vscode').lazy_load()
 require('luasnip.loaders.from_vscode').lazy_load({ paths = { './snippets' } })
+
+return options
