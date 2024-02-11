@@ -87,4 +87,4 @@ local options = {
 	},
 }
 
-return options;
+return options

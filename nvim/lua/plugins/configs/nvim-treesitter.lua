@@ -6,11 +6,11 @@
 -- url: https://github.com/nvim-treesitter/nvim-treesitter
 
 -- require('nvim-treesitter.configs').setup({
-	local options = {
+local options = {
 	highlight = {
 		enable = true,
 	},
-	ensure_installed = { 'lua', 'vim', 'dart', 'typescript' },
+	ensure_installed = { 'lua', 'dart', 'typescript' },
 	textobjects = {
 		select = {
 			enable = true,

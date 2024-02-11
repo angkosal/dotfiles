@@ -89,11 +89,11 @@ end
 --   vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " "))
 -- end, {})
 
-M.options={
+M.options = {
 	ensure_installed = { 'gopls' },
 }
 
-M.setup_handlers={
+M.setup_handlers = {
 	-- The first entry (without a key) will be the default handler
 	-- and will be called for each installed server that doesn't have
 	-- a dedicated handler.
@@ -211,6 +211,5 @@ mason_null_ls.setup({
 
 -- will setup any installed and configured sources above
 null_ls.setup()
-
 
 return M

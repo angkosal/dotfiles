@@ -86,6 +86,8 @@ map('n', '<leader>fa', ':Telescope find_files follow=true no_ignore=true hidden=
 map('n', '<leader>fh', ':Telescope help_tags <CR>')
 map('n', '<leader>fw', ':Telescope live_grep <CR>')
 map('n', '<leader>fo', ':Telescope oldfiles <CR>')
+map('n', '<leader>fp', ':lua vim.lsp.buf.format() <CR>')
+
 map('n', '<leader>th', ':Telescope themes <CR>')
 
 -- Git

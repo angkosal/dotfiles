@@ -38,7 +38,7 @@ M.options = {
 
 -- options = require('core.utils').load_override(options, 'folke/which-key.nvim')
 
-M.register={
+M.register = {
 	g = {
 		name = 'Git',
 	},

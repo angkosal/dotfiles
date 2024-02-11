@@ -15,13 +15,13 @@ local configs = {
 	'nvim-lua/plenary.nvim',
 	-- File explorer
 	{
-	'kyazdani42/nvim-tree.lua',
-	opts = function()
-      return require "plugins.configs.nvim-tree"
-    end,
-	config = function(_, opts)
-      require("nvim-tree").setup(opts)
-    end
+		'kyazdani42/nvim-tree.lua',
+		opts = function()
+			return require('plugins.configs.nvim-tree')
+		end,
+		config = function(_, opts)
+			require('nvim-tree').setup(opts)
+		end,
 	},
 
 	-- Indent line
@@ -34,7 +34,6 @@ local configs = {
 			require('nvim-autopairs').setup()
 		end,
 	},
-
 	-- Icons
 	'kyazdani42/nvim-web-devicons',
 
@@ -43,37 +42,41 @@ local configs = {
 
 	-- Treesitter interface
 	{
-		'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
 		opts = function()
-			return require "plugins.configs.nvim-treesitter"
+			return require('plugins.configs.nvim-treesitter')
 		end,
 		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-		end
+			require('nvim-treesitter.install').compilers = { 'clang' }
+			require('nvim-treesitter.configs').setup(opts)
+		end,
 	},
 	{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 
 	-- Color schemes
 	'bluz71/vim-nightfly-guicolors',
-	  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+	{ 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
 
 	-- LSP
-	{'williamboman/mason.nvim',
+	{
+		'williamboman/mason.nvim',
 		opts = function()
-			return require "plugins.configs.mason"
+			return require('plugins.configs.mason')
 		end,
 		config = function(_, opts)
-			require("mason").setup(opts)
-		end
-},
-	{'williamboman/mason-lspconfig.nvim',
+			require('mason').setup(opts)
+		end,
+	},
+	{
+		'williamboman/mason-lspconfig.nvim',
 		opts = function()
-			return require "plugins.configs.mason-lspconfig"
+			return require('plugins.configs.mason-lspconfig')
 		end,
 		config = function(_, opts)
-			require("mason-lspconfig").setup(opts.options)
-			require("mason-lspconfig").setup_handlers(opts.setup_handlers)
-		end
+			require('mason-lspconfig').setup(opts.options)
+			require('mason-lspconfig').setup_handlers(opts.setup_handlers)
+		end,
 	},
 	'jose-elias-alvarez/null-ls.nvim',
 	'neovim/nvim-lspconfig',
@@ -99,23 +102,23 @@ local configs = {
 			'hrsh7th/cmp-buffer',
 			'saadparwaiz1/cmp_luasnip',
 		},
- opts = function()
-      return require "plugins.configs.nvim-cmp"
-    end,
-    config = function(_, opts)
-      require("cmp").setup(opts)
-    end,
+		opts = function()
+			return require('plugins.configs.nvim-cmp')
+		end,
+		config = function(_, opts)
+			require('cmp').setup(opts)
+		end,
 	},
 
 	-- Statusline
 	{
 		'nvim-lualine/lualine.nvim',
 		opts = function()
-			return require "plugins.configs.lualine"
+			return require('plugins.configs.lualine')
 		end,
 		config = function(_, opts)
-			require("lualine").setup(opts)
-		end
+			require('lualine').setup(opts)
+		end,
 	},
 
 	-- git labels
@@ -134,22 +137,22 @@ local configs = {
 		'goolord/alpha-nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
 		opts = function()
-			return require "plugins.configs.alpha-nvim"
+			return require('plugins.configs.alpha-nvim')
 		end,
 		config = function(_, opts)
 			require('alpha').setup(opts)
-		end
+		end,
 	},
 
 	{
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } },
 		opts = function()
-			return require "plugins.configs.telescope"
+			return require('plugins.configs.telescope')
 		end,
 		config = function(_, opts)
 			require('telescope').setup(opts)
-		end
+		end,
 	},
 	{
 		'numToStr/Comment.nvim',
@@ -167,8 +170,8 @@ local configs = {
 	{
 		'kdheepak/lazygit.nvim',
 		config = function(_, opts)
-			require "plugins.configs.lazygit"
-		end
+			require('plugins.configs.lazygit')
+		end,
 	},
 
 	{ 'rafamadriz/friendly-snippets' },
@@ -176,12 +179,12 @@ local configs = {
 	{
 		'folke/which-key.nvim',
 		opts = function()
-			return require "plugins.configs.which-key"
+			return require('plugins.configs.which-key')
 		end,
 		config = function(_, opts)
 			require('which-key').setup(opts.options)
 			require('which-key').register(opts.register, { prefix = '<leader>' })
-		end
+		end,
 	},
 	{
 		'nvim-telescope/telescope-media-files.nvim',
@@ -195,4 +198,4 @@ local configs = {
 	},
 }
 
-require('lazy').setup(configs);
+require('lazy').setup(configs)
