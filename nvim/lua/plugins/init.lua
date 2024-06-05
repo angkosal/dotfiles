@@ -177,6 +177,16 @@ local configs = {
 	{ 'rafamadriz/friendly-snippets' },
 	--use {"github/copilot.vim"}
 	{
+		'codota/tabnine-nvim',
+		build = './dl_binaries.sh',
+		opts = function()
+			return require('plugins.configs.tabnine')
+		end,
+		config = function(_, opts)
+			require('tabnine').setup(opts)
+		end,
+	},
+	{
 		'folke/which-key.nvim',
 		opts = function()
 			return require('plugins.configs.which-key')
