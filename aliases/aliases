@@ -190,4 +190,4 @@ alias calen='calendarFunction'
 
 alias art="php artisan"
 
-alias pgstart="pg_ctl -D /opt/homebrew/var/postgres start"
+alias pgstart="brew services start postgresql"
