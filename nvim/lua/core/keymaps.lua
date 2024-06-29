@@ -125,6 +125,8 @@ function run_f1()
 		and (string.match(vim.fn.expand('%'), '.test.') or string.match(vim.fn.expand('%'), '-spec.'))
 	then
 		vim.cmd(':!yarn test %')
+	elseif vim.bo.filetype == 'php' and string.match(vim.fn.expand('%'), 'Test.php') then
+		vim.cmd(':!php artisan test %')
 	else
 		-- vim.cmd(':make<CR>')
 		print(vim.bo.filetype)
