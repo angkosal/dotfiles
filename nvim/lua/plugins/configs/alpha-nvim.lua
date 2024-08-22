@@ -12,11 +12,15 @@ local dashboard = require('alpha.themes.dashboard')
 
 -- Footer
 local function footer()
-	local version = vim.version()
-	local print_version = 'v' .. version.major .. '.' .. version.minor .. '.' .. version.patch
-	local datetime = os.date('%Y/%m/%d %H:%M:%S')
+	-- local version = vim.version()
+	-- local print_version = 'v' .. version.major .. '.' .. version.minor .. '.' .. version.patch
+	-- local datetime = os.date('%Y/%m/%d %H:%M:%S')
+	--
+	-- return print_version .. ' ' .. datetime
 
-	return print_version .. ' ' .. datetime
+	local stats = require('lazy').stats()
+	local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+	return '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms'
 end
 
 -- Banner
