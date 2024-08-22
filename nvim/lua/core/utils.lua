@@ -57,4 +57,9 @@ M.tabline = function()
 	return s
 end
 
+M.is_windows = function()
+	print(vim.inspect(package.config:sub(1, 1)))
+	return package.config:sub(1, 1) ~= '/'
+end
+
 return M
