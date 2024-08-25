@@ -23,7 +23,11 @@ local configs = {
 			require('nvim-tree').setup(opts)
 		end,
 	},
-
+	{
+		'vhyrro/luarocks.nvim',
+		priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+		config = true,
+	},
 	-- Indent line
 	'lukas-reineke/indent-blankline.nvim',
 
@@ -36,6 +40,25 @@ local configs = {
 	},
 	-- Icons
 	'kyazdani42/nvim-web-devicons',
+	{
+		'echasnovski/mini.icons',
+		lazy = true,
+		opts = {
+			file = {
+				['.keep'] = { glyph = '󰊢', hl = 'MiniIconsGrey' },
+				['devcontainer.json'] = { glyph = '', hl = 'MiniIconsAzure' },
+			},
+			filetype = {
+				dotenv = { glyph = '', hl = 'MiniIconsYellow' },
+			},
+		},
+		init = function()
+			package.preload['nvim-web-devicons'] = function()
+				require('mini.icons').mock_nvim_web_devicons()
+				return package.loaded['nvim-web-devicons']
+			end
+		end,
+	},
 
 	-- Tag viewer
 	'liuchengxu/vista.vim',
@@ -160,12 +183,12 @@ local configs = {
 			require('Comment').setup()
 		end,
 	},
-	{
-		'akinsho/flutter-tools.nvim',
-		config = function()
-			require('flutter-tools').setup({})
-		end,
-	},
+	-- {
+	-- 	'akinsho/flutter-tools.nvim',
+	-- 	config = function()
+	-- 		require('flutter-tools').setup({})
+	-- 	end,
+	-- },
 
 	{
 		'kdheepak/lazygit.nvim',
@@ -178,7 +201,7 @@ local configs = {
 	--use {"github/copilot.vim"}
 	{
 		'codota/tabnine-nvim',
-		build = './dl_binaries.sh',
+		build = require('plugins.configs.tabnine').build_path(),
 		opts = function()
 			return require('plugins.configs.tabnine')
 		end,
@@ -188,12 +211,13 @@ local configs = {
 	},
 	{
 		'folke/which-key.nvim',
+		event = 'VeryLazy',
 		opts = function()
 			return require('plugins.configs.which-key')
 		end,
 		config = function(_, opts)
 			require('which-key').setup(opts.options)
-			require('which-key').register(opts.register, { prefix = '<leader>' })
+			require('which-key').add(opts.register, { prefix = '<leader>' })
 		end,
 	},
 	{

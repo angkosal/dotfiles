@@ -91,7 +91,7 @@ map('n', '<leader>fp', ':lua vim.lsp.buf.format() <CR>')
 map('n', '<leader>th', ':Telescope themes <CR>')
 
 -- Git
-map('n', '<leader>gg', '<cmd>Git<cr>', { desc = 'Git' })
+map('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'Git' })
 map('n', '<leader>gj', "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { desc = 'Next hunk' })
 map('n', '<leader>gk', "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", { desc = 'Prev hunk' })
 map('n', '<leader>gl', "<cmd>lua require 'gitsigns'.blame_line()<cr>", { desc = 'Blame line' })
