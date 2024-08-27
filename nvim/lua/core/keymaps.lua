@@ -58,6 +58,8 @@ map('n', '<Tab>', '%', opt)
 map('v', '<Tab>', '%', opt)
 map('i', '<C-H>', '<C-W>', { noremap = true })
 
+map('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>', { noremap = true })
+
 -- Resize current window
 map('n', '<M-j>', ':resize -2<CR>', opt)
 map('n', '<M-k>', ':resize +2<CR>', opt)
