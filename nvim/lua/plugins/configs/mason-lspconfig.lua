@@ -95,7 +95,7 @@ end
 -- end, {})
 
 M.options = {
-	ensure_installed = { 'gopls' },
+	ensure_installed = {},
 }
 
 M.setup_handlers = {
