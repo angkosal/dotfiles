@@ -172,6 +172,16 @@ nvim /tmp/nvim-start.log
 
 See: `:help startuptime`
 
+## Windows
+```bash
+choco install llvm
+// add to path: C:\ProgramData\mingw64\mingw64\bin
+
+choco install ripgrep
+
+// add to path: C:\Users\kosal\AppData\Local\nvim-data\mason\bin
+```
+
 ## TODO
 
 - Improve "Autocommands" management
