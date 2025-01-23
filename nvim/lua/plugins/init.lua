@@ -16,6 +16,7 @@ local configs = {
 	-- File explorer
 	{
 		'kyazdani42/nvim-tree.lua',
+    cmd = 'NvimTreeToggle',
 		opts = function()
 			return require('plugins.configs.nvim-tree')
 		end,
@@ -66,6 +67,7 @@ local configs = {
 	-- Treesitter interface
 	{
 		'nvim-treesitter/nvim-treesitter',
+    -- lazy = false,
 		run = ':TSUpdate',
 		opts = function()
 			return require('plugins.configs.nvim-treesitter')
@@ -84,6 +86,7 @@ local configs = {
 	-- LSP
 	{
 		'williamboman/mason.nvim',
+    lazy = false,
 		opts = function()
 			return require('plugins.configs.mason')
 		end,
@@ -93,6 +96,7 @@ local configs = {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
+    lazy = false,
 		opts = function()
 			return require('plugins.configs.mason-lspconfig')
 		end,
@@ -118,6 +122,7 @@ local configs = {
 	-- Autocomplete
 	{
 		'hrsh7th/nvim-cmp',
+    lazy = false,
 		dependencies = {
 			'L3MON4D3/LuaSnip',
 			'hrsh7th/cmp-nvim-lsp',
@@ -158,6 +163,7 @@ local configs = {
 	-- Dashboard (start screen)
 	{
 		'goolord/alpha-nvim',
+    lazy = false,
 		requires = { 'kyazdani42/nvim-web-devicons' },
 		opts = function()
 			return require('plugins.configs.alpha-nvim')
@@ -170,6 +176,7 @@ local configs = {
 	{
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } },
+    cmd = 'Telescope',
 		opts = function()
 			return require('plugins.configs.telescope')
 		end,
@@ -192,6 +199,7 @@ local configs = {
 
 	{
 		'kdheepak/lazygit.nvim',
+    cmd = 'LazyGit',
 		config = function(_, opts)
 			require('plugins.configs.lazygit')
 		end,
@@ -232,4 +240,9 @@ local configs = {
 	},
 }
 
-require('lazy').setup(configs)
+require('lazy').setup(configs, {
+	defaults = { lazy = true },
+	performance = {
+		cache = { enabled = true },
+	},
+})
