@@ -16,7 +16,7 @@ local configs = {
 	-- File explorer
 	{
 		'kyazdani42/nvim-tree.lua',
-    cmd = 'NvimTreeToggle',
+		cmd = 'NvimTreeToggle',
 		opts = function()
 			return require('plugins.configs.nvim-tree')
 		end,
@@ -35,6 +35,7 @@ local configs = {
 	-- Autopair
 	{
 		'windwp/nvim-autopairs',
+		event = 'InsertEnter',
 		config = function()
 			require('nvim-autopairs').setup()
 		end,
@@ -62,12 +63,12 @@ local configs = {
 	},
 
 	-- Tag viewer
-	'liuchengxu/vista.vim',
+	-- 'liuchengxu/vista.vim',
 
 	-- Treesitter interface
 	{
 		'nvim-treesitter/nvim-treesitter',
-    -- lazy = false,
+		-- lazy = false,
 		run = ':TSUpdate',
 		opts = function()
 			return require('plugins.configs.nvim-treesitter')
@@ -86,7 +87,7 @@ local configs = {
 	-- LSP
 	{
 		'williamboman/mason.nvim',
-    lazy = false,
+		lazy = false,
 		opts = function()
 			return require('plugins.configs.mason')
 		end,
@@ -96,7 +97,7 @@ local configs = {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
-    lazy = false,
+		lazy = false,
 		opts = function()
 			return require('plugins.configs.mason-lspconfig')
 		end,
@@ -122,7 +123,7 @@ local configs = {
 	-- Autocomplete
 	{
 		'hrsh7th/nvim-cmp',
-    lazy = false,
+		lazy = false,
 		dependencies = {
 			'L3MON4D3/LuaSnip',
 			'hrsh7th/cmp-nvim-lsp',
@@ -163,7 +164,7 @@ local configs = {
 	-- Dashboard (start screen)
 	{
 		'goolord/alpha-nvim',
-    lazy = false,
+		lazy = false,
 		requires = { 'kyazdani42/nvim-web-devicons' },
 		opts = function()
 			return require('plugins.configs.alpha-nvim')
@@ -176,7 +177,7 @@ local configs = {
 	{
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } },
-    cmd = 'Telescope',
+		cmd = 'Telescope',
 		opts = function()
 			return require('plugins.configs.telescope')
 		end,
@@ -186,6 +187,7 @@ local configs = {
 	},
 	{
 		'numToStr/Comment.nvim',
+		lazy = false,
 		config = function()
 			require('Comment').setup()
 		end,
@@ -199,7 +201,7 @@ local configs = {
 
 	{
 		'kdheepak/lazygit.nvim',
-    cmd = 'LazyGit',
+		cmd = 'LazyGit',
 		config = function(_, opts)
 			require('plugins.configs.lazygit')
 		end,
