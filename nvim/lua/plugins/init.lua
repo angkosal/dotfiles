@@ -138,6 +138,15 @@ local configs = {
 			require('cmp').setup(opts)
 		end,
 	},
+	{
+		'monkoose/neocodeium',
+		event = 'VeryLazy',
+		config = function()
+			local neocodeium = require('neocodeium')
+			neocodeium.setup()
+			vim.keymap.set('i', '<A-f>', neocodeium.accept)
+		end,
+	},
 
 	-- Statusline
 	{
@@ -219,6 +228,12 @@ local configs = {
 			require('tabnine').setup(opts)
 		end,
 	},
+	-- {
+	-- 	'jpmcb/nvim-llama',
+	-- 	config = function(_, opts)
+	-- 		require('nvim-llama').setup({})
+	-- 	end,
+	-- },
 	{
 		'folke/which-key.nvim',
 		event = 'VeryLazy',
