@@ -113,7 +113,7 @@ map('v', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = 
 map('v', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = 'Stage hunk' })
 
 -- Copilot
-map('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
+-- map('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- get current buffer filetype function
 function run_f1()
