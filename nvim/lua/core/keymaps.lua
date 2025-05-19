@@ -112,9 +112,6 @@ map('n', '<leader>gD', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Git diff HEA
 map('v', '<leader>gr', "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = 'Reset hunk' })
 map('v', '<leader>gs', "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = 'Stage hunk' })
 
--- Copilot
--- map('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
-
 -- get current buffer filetype function
 function run_f1()
 	-- if it flutter should run restart
