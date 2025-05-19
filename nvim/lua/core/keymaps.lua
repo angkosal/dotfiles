@@ -66,9 +66,6 @@ map('n', '<M-k>', ':resize +2<CR>', opt)
 map('n', '<M-h>', ':vertical resize -2<CR>', opt)
 map('n', '<M-l>', ':vertical resize +2<CR>', opt)
 
--- Vista tag-viewer
-map('n', '<leader>m', ':Vista!!<CR>') -- open/close
-
 map('n', '<leader>;', ':Alpha<CR>') -- open/close
 map('n', '<leader>c', ':Telescope commands<CR>', { desc = 'Commands' }) -- open/close
 map('n', '<leader>q', ':qa!<CR>', { desc = 'Quick' })
