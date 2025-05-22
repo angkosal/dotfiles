@@ -2,13 +2,6 @@
 -- Plugin manager configuration file
 -----------------------------------------------------------
 
--- Plugin manager: lazy.nvim
--- url: https://github.com/folke/lazy.nvim
-
--- For information about installed plugins see the README
---- neovim-lua/README.md
---- https://github.com/brainfucksec/neovim-lua#readme
-
 -- Add packages
 local configs = {
 	-- use('wbthomason/packer.nvim') -- packer can manage itself
@@ -26,7 +19,7 @@ local configs = {
 	},
 	{
 		'vhyrro/luarocks.nvim',
-		priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+		priority = 1000,
 		config = true,
 	},
 	-- Indent line
