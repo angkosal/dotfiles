@@ -4,8 +4,8 @@
 
 -- Add packages
 local configs = {
-	-- use('wbthomason/packer.nvim') -- packer can manage itself
 	'nvim-lua/plenary.nvim',
+
 	-- File explorer
 	{
 		'kyazdani42/nvim-tree.lua',
@@ -54,9 +54,6 @@ local configs = {
 			end
 		end,
 	},
-
-	-- Tag viewer
-	-- 'liuchengxu/vista.vim',
 
 	-- Treesitter interface
 	{
@@ -108,9 +105,6 @@ local configs = {
 			'williamboman/mason.nvim',
 			'jose-elias-alvarez/null-ls.nvim',
 		},
-		-- config = function()
-		--   require("your.null-ls.config") -- require your null-ls config here (example below)
-		-- end,
 	},
 
 	-- Autocomplete
