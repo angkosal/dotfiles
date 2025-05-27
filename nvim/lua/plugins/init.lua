@@ -71,8 +71,15 @@ local configs = {
 	{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 
 	-- Color schemes
-	'bluz71/vim-nightfly-guicolors',
-	{ 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
+	-- { 'bluz71/vim-nightfly-colors', name = 'nightfly', lazy = false, priority = 1000 },
+	{ 'EdenEast/nightfox.nvim' },
+	-- { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
+	-- {
+	-- 	'folke/tokyonight.nvim',
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- },
 
 	-- LSP
 	{
@@ -93,17 +100,16 @@ local configs = {
 		end,
 		config = function(_, opts)
 			require('mason-lspconfig').setup(opts.options)
-			require('mason-lspconfig').setup_handlers(opts.setup_handlers)
+			--require('mason-lspconfig').setup_handlers(opts.setup_handlers)
 		end,
 	},
-	'jose-elias-alvarez/null-ls.nvim',
+	'nvimtools/none-ls.nvim',
 	'neovim/nvim-lspconfig',
 	{
 		'jay-babu/mason-null-ls.nvim',
 		event = { 'BufReadPre', 'BufNewFile' },
 		dependencies = {
 			'williamboman/mason.nvim',
-			'jose-elias-alvarez/null-ls.nvim',
 		},
 	},
 

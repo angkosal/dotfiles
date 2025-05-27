@@ -14,7 +14,8 @@
 --vim.cmd[[colorscheme tokyonight]]
 -- vim.opt.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme nightfly]])
-vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme nightfox]])
 
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 vim.cmd('hi LineNr ctermbg=NONE guibg=NONE')
